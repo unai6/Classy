@@ -52,6 +52,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 var indexRouter = require('./routes/index.js');
 var usersRouter = require('./routes/users.js');
 var authRouter = require('./routes/auth/auth.js');
+var classyRouter = require('./routes/classy/classy.js')
 
 app.use(session({
   secret: 'never do your own laundry again',
@@ -78,6 +79,7 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
+app.use('/classy', classyRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

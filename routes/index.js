@@ -14,6 +14,11 @@ router.get('/home', (req, res, next) => {
   res.render('landing-page')
 });
 
+router.get('/user-interface', (req, res, next) => {
+  res.render('user-interface')
+});
+
+
 
 
 ////////////////////////////

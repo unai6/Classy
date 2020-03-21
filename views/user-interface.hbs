@@ -1,0 +1,19 @@
+<nav>
+    <a href='/home'>Home</a>
+</nav>
+
+<div>
+{{#if currentUserInfo.isTeacher}}
+
+    <h2>YOUR CLASSES</h2>
+
+    <form action='/' method='post'>
+
+    <input type='date' name='date'> {{date}}    
+    </form>
+</div>
+{{else}}
+
+<div>HELLO i am a student</div>
+<a href='/auth/logout'>Log out</a>
+{{/if}}
