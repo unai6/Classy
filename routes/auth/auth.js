@@ -67,29 +67,25 @@ router.post('/login', (req, res,next) => {
         return;
       }
      
-    User.findOne({email})
-    .then(user => {
-        if(!user){
-            res.render('login.hbs', {
-            errorMessage: 'The username does not exist'
-        })
-        return;
+  User.findOne({ email }, (err, oneUser) => {
+    if (err || oneUser === null) {
+      res.render('login', {
+        errorMessage: `There isn't an account with email ${email}.`
+      });
+      return;
     }
-    if (bcrypt.compareSync(password, user.password)) {
-      req.session.currentUser = user;
-        console.log("usuario registrado")
-        res.render('user-landing.hbs');
-      } else {
-        res.render('login.hbs', {
-        errorMessage: 'Incorrect password'
-        });
-    }
-  })
-  .catch(error => {
-    next(error);
-  });
 
-  res.redirect('/classy')
+ 
+    if (!bcrypt.compareSync(password, oneUser.password)) {
+      res.render('login', {
+        errorMessage: 'Invalid password.'
+      });
+      return;
+    }
+
+    req.session.currentUser = oneUser;
+    res.redirect('/classy/classy');
+  });
 });
 
 
