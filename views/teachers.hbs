@@ -1,0 +1,15 @@
+<h2> Find a Teacher </h2>
+<ul>
+    {{#each teachers}}
+    <li>
+        <h3> {{ this.name }} </h3>
+        <p> Fee: ${{ this.fee }} </p>
+        <a href="/classy/teachers/{{ this._id }}">
+            Schedule a Class
+        </a>
+    </li>
+    {{/each}}
+</ul>
+<a href="/user-interface">
+    Back to Dashboard
+</a>

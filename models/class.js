@@ -9,7 +9,7 @@ classDate : Date,
 name: String, 
 description: String,
 //level : {type: String,  enum: [ 'Basic', 'Intermediate', 'Advanced'] },  
-user: { type: Schema.Types.ObjectId, ref:'User'},
+user: [{ type: Schema.Types.ObjectId, ref:'User'}],
 teacher: { type: Schema.Types.ObjectId, ref:'User'}
 
 },

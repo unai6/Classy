@@ -1,0 +1,14 @@
+<h2>Edit celebrity</h2>
+<form action="/classy/{{classEdit.id}}" method="post">
+<label for="name">Name</label>
+<input type="text" name="name" value="{{classEdit.name}}" id="">
+<br />
+<label for="occupation">Description</label>
+<input type="text" name="description" value="{{classEdit.description}}" id="">
+<label for="classDate">Class Date</label>
+<input type="date" name="classDate" value="{{classEdit.classDate}}" id="">
+<br />
+
+<br />
+<button type="submit">Edit Class</button>
+</form>

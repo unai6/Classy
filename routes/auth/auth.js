@@ -15,8 +15,9 @@ router.get('/signup', (req, res, next) => {
 
 
 router.post('/signup', (req, res, next) => {
-    const { email, name, password } = req.body;
-  
+    let { email, name, password, isTeacher } = req.body;
+  console.log(isTeacher)
+
     if (name === '' || password === '') {
       res.render('signup.hbs', {
         errorMessage: 'Please provide a name and password to sign up'
@@ -35,10 +36,14 @@ router.post('/signup', (req, res, next) => {
   
         const salt = bcrypt.genSaltSync(bcryptSalt);
         const hashPass = bcrypt.hashSync(password, salt);
-  
-        User.create({ name, email, password: hashPass, })
+        
+        if(isTeacher === 'on'){
+          isTeacher = true
+        }
+
+        User.create({ name, email, password: hashPass, isTeacher })
           .then(() => {
-            res.redirect('/auth/login');rs
+            res.redirect('/auth/login');
           })
           .catch(error => {
             console.log(error);

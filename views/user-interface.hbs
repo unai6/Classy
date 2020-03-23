@@ -3,18 +3,40 @@
 </nav>
 
 <div>
-{{#if currentUserInfo.isTeacher}}
 
     <h2>YOUR CLASSES</h2>
+    
 
-    <form action='/' method='post'>
-
-    <input type='date' name='date'> {{classDate}}    
-   </form>
 </div>
-<a href='/auth/logout'>Log out</a>
-{{else}}
 
-<div>HELLO i am a student</div>
-<a href='/auth/logout'>Log out</a>
+
+ {{#each classes}}
+
+    {{this.classDate}}
+    {{this.name}}
+    {{this.description}}
+    
+{{#if ../isTeacher }}
+
+<form action ='/classy/{{this._id}}/delete' method='POST'>  
+        <button type ='submit'>DELETE</button>
+        </form>
+    
+    <a href='/classy/{{this._id}}/edit'>EDIT</a>
+
 {{/if}}
+
+{{/each}}  
+
+{{#if isTeacher}}
+<a href='/classy/create-class'>Create a new class</a>
+{{/if}}
+
+{{#unless isTeacher}}
+
+You're a student
+
+{{/unless}}
+<a href='/auth/logout'>Log out</a>
+
+
