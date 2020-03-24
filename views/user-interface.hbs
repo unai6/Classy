@@ -5,13 +5,13 @@
 
 <div>
     <h2>YOUR CLASSES</h2>
-    
+    Welcome back! 
 </div>
 
 <!--Teacher interface-->
-{{#if ../isTeacher }}
+{{#each classes}}
+    {{#if ../isTeacher }}
 
-    {{#each classes}}
 
     {{this.classDate2}}<br>
     {{this.time}} 
@@ -24,9 +24,9 @@
         <button type ='submit'>DELETE</button>
         </form>
     <a href='/classy/{{this._id}}/edit'>EDIT</a><br>
-    {{/each}} 
 
-{{/if}}
+    {{/if}}
+{{/each}} 
 
 {{#if isTeacher}}
 <a href='/classy/create-class'>Create a new class</a>
@@ -35,23 +35,17 @@
 
 <!-- Student interface -->
 
-{{#unless isTeacher}}
+{{#each classes}}
+    {{#unless isTeacher}}
 
-    {{#each classes}}
-
-    <p>Welcome back {{student.0.name}} <br></p>
-    <p>Classes<br></p>
-    
     {{this.classDate2}}<br>
-    {{this.time}} 
-    - 
+    {{this.time}}
     {{this.name}}
-    {{this.description}}
-
+    {{this.description}}<br>
 
     
-    {{/each}}
-{{/unless}}
+    {{/unless}}
+{{/each}}
 
 <!--(TSI)--->
 
