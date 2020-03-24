@@ -167,3 +167,47 @@ height:80vh;
   text-decoration:none;
   color: rgb(107,186,19);
 }
+
+.view {
+  margin:0;
+  background-image: url(../images/Doisneau-kids.jpg);
+  background-size: cover;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.layer {
+  margin:0;
+  background-color: rgba(111, 67, 131, 0.901);
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  /* border: 30px solid rgb(105, 75, 47); */
+}
+
+.mainTitle {
+  position: absolute;
+  top: 38%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  font-size: 9em;
+  font-family: "Pacifico";
+  color: rgba(0, 0, 0, 0.85);
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

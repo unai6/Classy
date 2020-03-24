@@ -178,14 +178,4 @@ router.post ('/:id', (req, res, next) => {
 });
 
 
-
-router.get("/:id/", (req, res, next) => {
-  Class.findById(req.params.id)
-    .populate('user')
-    .then(classEdit => {
-      res.render("class-details", {classEdit});
-    })
-    .catch(e => next(e));
-});
-
   module.exports = router
