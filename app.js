@@ -15,7 +15,7 @@ const MongoStore = require('connect-mongo')(session);
 
 
 mongoose
-  .connect('mongodb://localhost/classy-project', {
+  .connect(process.env.MONGOSERVER, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
