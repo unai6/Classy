@@ -12,7 +12,7 @@ name: String,
 description: String,
 time:String,
 //level : {type: String,  enum: [ 'Basic', 'Intermediate', 'Advanced'] },  
-user: [{ type: Schema.Types.ObjectId, ref:'User'}],
+student: [{ type: Schema.Types.ObjectId, ref:'User'}],
 teacher: { type: Schema.Types.ObjectId, ref:'User'}
 
 },

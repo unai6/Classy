@@ -24,33 +24,24 @@ router.use((req, res, next) => {
     if (req.session.currentUser.isTeacher) {
       query = { teacher: req.session.currentUser._id };
     } else {
-      query = { user: req.session.currentUser._id };
+      query = { student: req.session.currentUser._id };
     }
     //console.log(req.session.currentUser.isTeacher)
     Class
       .find(query)
-      .populate('user', 'name')
+      .populate('student', 'name')
       .populate('teacher', 'name')
       .sort('classDate')
       .exec((err, classes) => {
-        if (err) {
+        if (err) {  
           next(err);
           return;
         }
-        
-        /*for(let i = 0; i < classes.length; i++){
-          
-            console.log(classes[i].classDate)
-          console.log(moment(classes[i].classDate).format('MMMM Do YYYY, h:mm:ss a'));
-            classes[i].classDate = moment(classes[i].classDate).format('MMMM Do YYYY, h:mm:ss a')
-          }
-          console.log(classes)*/
-
+        //change the view of the dates
           classes.forEach(date => { 
-            date.classDate2 = moment(date.classDate).format('ddd Do MMMM YYYY')
-          })
+          date.classDate2 = moment(date.classDate).format('ddd Do MMMM YYYY')
+        })
           
-
         res.render('user-interface.hbs', {classes, isTeacher: req.session.currentUser.isTeacher});
       });
   });
@@ -153,10 +144,8 @@ router.use((req, res, next) => {
       const teacher = req.session.currentUser._id
       console.log(student)
 
-      classDate = classDate
 
        Class.create({name, description, classDate, time, teacher, student})
-       
       .then(data => {
           res.redirect('/classy/classy')
       })
