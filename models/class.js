@@ -11,6 +11,10 @@ classDate : Date,
 name: String, 
 description: String,
 time:String,
+rating: Number,
+feedback: [{
+    user: String,
+    }],
 //level : {type: String,  enum: [ 'Basic', 'Intermediate', 'Advanced'] },  
 student: [{ type: Schema.Types.ObjectId, ref:'User'}],
 teacher: { type: Schema.Types.ObjectId, ref:'User'}
