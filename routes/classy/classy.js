@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const moment= require('moment')
+moment().format();
 
 const User = require('../../models/user');
 const Class = require('../../models/class');
@@ -139,6 +141,7 @@ router.use((req, res, next) => {
       classDate = classDate
 
        Class.create({name, description, classDate, teacher, student})
+       
       .then(data => {
           res.redirect('/classy/classy')
       })
@@ -179,13 +182,5 @@ router.post ('/:id', (req, res, next) => {
 
 
 
-router.get("/:id/", (req, res, next) => {
-  Class.findById(req.params.id)
-    .populate('user')
-    .then(classEdit => {
-      res.render("class-details", {classEdit});
-    })
-    .catch(e => next(e));
-});
 
   module.exports = router

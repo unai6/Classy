@@ -1,11 +1,13 @@
 
 const mongoose = require('mongoose')
+const moment= require('moment')
+moment().format( );
 const Schema = mongoose.Schema;
 
 
 const classSchema = new Schema ({
 
-classDate : Date,
+classDate :Date,
 name: String, 
 description: String,
 //level : {type: String,  enum: [ 'Basic', 'Intermediate', 'Advanced'] },  
