@@ -184,5 +184,23 @@ router.post ('/:id', (req, res, next) => {
       .catch(next)
 });
 
+/////////////
+//class-details
+
+router.get('/class-details', (req, res, next)=> {
+  
+  res.render('class-details')
+})
+
+router.post('/class-details', (req, res, next) => {
+
+  let {description, rating} = req.body
+
+  Class.update({description, feedback, rating})
+
+  console.log({description, feedback, rating})
+
+})
+
 
 module.exports= router

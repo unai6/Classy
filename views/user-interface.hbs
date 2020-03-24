@@ -12,13 +12,11 @@
 {{#each classes}}
     {{#if ../isTeacher }}
 
-
     {{this.classDate2}}<br>
     {{this.time}} 
     - 
-    {{this.name}}
-    {{this.description}}
-    {{this.student.0.name}}
+    {{this.name}} 
+    {{this.student.0.name}} <a href='/classy/class-details'>+</a>
 
     <form action ='/classy/{{this._id}}/delete' method='POST'>  
         <button type ='submit'>DELETE</button>
@@ -35,17 +33,16 @@
 
 <!-- Student interface -->
 
-{{#each classes}}
-    {{#unless isTeacher}}
+{{#unless isTeacher}}
+    {{#each classes}}
 
     {{this.classDate2}}<br>
     {{this.time}}
-    {{this.name}}
+    {{this.name}} <a href='/class-details.hbs'>+</a>
     {{this.description}}<br>
 
-    
-    {{/unless}}
-{{/each}}
+    {{/each}}
+{{/unless}}
 
 <!--(TSI)--->
 
