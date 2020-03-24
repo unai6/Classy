@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const moment= require('moment')
-moment().format();
 
 const User = require('../../models/user');
 const Class = require('../../models/class');
@@ -16,6 +15,9 @@ router.use((req, res, next) => {
     res.redirect('/auth/login');
   });
   
+  
+  /// RUTA INTERFAZ USUARIO
+
   router.get('/classy', (req, res, next) => {
     let query;
   
@@ -36,11 +38,24 @@ router.use((req, res, next) => {
           return;
         }
         
-        console.log(classes)
+        /*for(let i = 0; i < classes.length; i++){
+          
+            console.log(classes[i].classDate)
+          console.log(moment(classes[i].classDate).format('MMMM Do YYYY, h:mm:ss a'));
+            classes[i].classDate = moment(classes[i].classDate).format('MMMM Do YYYY, h:mm:ss a')
+          }
+          console.log(classes)*/
+
+          classes.forEach(date => { 
+            date.classDate2 = moment(date.classDate).format('ddd Do MMMM YYYY')
+          })
+          
+
         res.render('user-interface.hbs', {classes, isTeacher: req.session.currentUser.isTeacher});
       });
   });
 
+////////////////////////////////  
 
   router.get('/teachers', (req, res, next) => {
     User.find(
@@ -134,13 +149,13 @@ router.use((req, res, next) => {
 
     router.post('/create-class', (req, res, next) => {
 
-      let {name, description, classDate, student} = req.body;
+      let {name, description, classDate, time, student} = req.body;
       const teacher = req.session.currentUser._id
       console.log(student)
 
       classDate = classDate
 
-       Class.create({name, description, classDate, teacher, student})
+       Class.create({name, description, classDate, time, teacher, student})
        
       .then(data => {
           res.redirect('/classy/classy')

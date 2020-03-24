@@ -7,9 +7,10 @@ const Schema = mongoose.Schema;
 
 const classSchema = new Schema ({
 
-classDate :Date,
+classDate : Date,
 name: String, 
 description: String,
+time:String,
 //level : {type: String,  enum: [ 'Basic', 'Intermediate', 'Advanced'] },  
 user: [{ type: Schema.Types.ObjectId, ref:'User'}],
 teacher: { type: Schema.Types.ObjectId, ref:'User'}
