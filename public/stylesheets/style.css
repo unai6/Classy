@@ -1,11 +1,13 @@
 
 * {
-  margin:0px;
-  padding:0px
+  margin:0;
+  padding:0;
+  overflow:auto
 }
 
 body{
-  min-height:100vh;
+  margin:0;
+  padding:0
 }
 
 .viewport-100{
@@ -48,7 +50,9 @@ color: rgb(107,226,19);
 
 .circle-container{
 position:relative;
-height:100vh;
+height:85vh;
+overflow:auto
+
 }
 
 .circle-helix {
