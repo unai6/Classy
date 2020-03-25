@@ -1,18 +1,18 @@
+<div class="signup">
+    <h2><u>Log in</u></h2>
 <form action='/auth/login' method='post'>
 
-<label for='email'>Email </label>
-<input type='email' name='email' placeholder='Email @'>
+{{!-- <label for='email'>Email </label> --}}
+<input class="signupFields" type='email' name='email' placeholder='Email @' required='required'>
 
-<label for='password'>Password </label>
-<input type='password' name='password' placeholder='Password'>
+{{!-- <label for='password'>Password </label> --}}
+<input class="signupFields" type='password' name='password' placeholder='Password' required='required'>
 
-<button type='submit'>Login</button>
+<button class="btn" type='submit'>Login</button>
 
 </form>
 
 
 {{#if errorMessage}}
-
 <p> {{errorMessage}}</p>
-
 {{/if}}

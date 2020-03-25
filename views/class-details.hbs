@@ -26,13 +26,13 @@
           <textarea id = "Feedback"
                   rows = "3"
                   cols = "40"
-                  name='feedback'></textarea>
+                  name='feedback'
+                  value='{{classId.feedback}}'></textarea>
         </p>
       </fieldset>
 
       <button type='submit'>Save</button>
     </form>
 
-{{#each class}}
-{{this.description}}
-{{/each}}
+
+{{classId.description}}

@@ -1,52 +1,58 @@
 <!-- Teacher and student interface (TSI) -->
-<nav>
-    <a href='/home'>Home</a>
+<nav class='userInt-nav'>
+    <a class='home-a' href='/home'>Home</a>
 </nav>
 
-<div>
-    <h2>YOUR CLASSES</h2>
-    Welcome back! 
-</div>
+<div class='full-class'>
 
+    <h2 class='h2-interface'>YOUR CLASSES</h2>
+    <p class='p-interface'>Welcome back!<p>  
 <!--Teacher interface-->
-{{#each classes}}
-    {{#if ../isTeacher }}
 
-    {{this.classDate2}}<br>
-    {{this.time}} 
-    - 
-    {{this.name}} 
-    {{this.student.0.name}} <a href='/classy/{{this._id}}/class-details'>⊕</a>
+    <div class='teacher-interface'>
+    {{#if isTeacher }}
+        {{#each classes}}
+
+         {{this.classDate2}}<br>
+         {{this.time}} 
+            - 
+         {{this.name}} 
+         {{this.student.0.name}} <a href='/classy/{{this._id}}/class-details'>⊕</a>
 
     <form action ='/classy/{{this._id}}/delete' method='POST'>  
         <button type ='submit'>DELETE</button>
-        </form>
-    <a href='/classy/{{this._id}}/edit'>EDIT</a><br>
+    </form>
+        <a href='/classy/{{this._id}}/edit'>EDIT</a><br>
+        <br>
+    
+    {{/each}} 
 
-    {{/if}}
-{{/each}} 
-
-{{#if isTeacher}}
-<a href='/classy/create-class'>Create a new class</a>
+<a href='/classy/create-class'>Create a new class</a> <br>
+    <a href='/auth/logout'>Log out</a>
+    </div>
 {{/if}}
 
-
 <!-- Student interface -->
-
-{{#unless isTeacher}}
+    {{#unless isTeacher}}
+    <div class='student interface'>
     {{#each classes}}
 
     {{this.classDate2}}<br>
     {{this.time}}
     {{this.name}} 
-    {{this.description}}<a href='/classy/class-details'>⊕</a><br>
+    {{this.description}}<a href='/classy/{{this._id}}/class-details'>⊕</a><br>
 
     {{/each}}
-{{/unless}}
 
-<!--(TSI)--->
+    <br>
+    <a href='/auth/logout'>Log out</a>
 
-<br>
-<a href='/auth/logout'>Log out</a>
+    </div>
+    {{/unless}}
+</div>
 
 
+
+
+
+    

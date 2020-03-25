@@ -168,6 +168,7 @@ router.use((req, res, next) => {
 
 router.get("/:id/edit", (req, res, next) => {
   Class.findById(req.params.id)
+
     .then(classEdit => {
       res.render("class-edit", {classEdit});
     })
@@ -199,20 +200,14 @@ router.get('/:id/class-details', (req, res, next) => {
 });
 
 router.post ('/:id', (req, res, next) => {
-  const {description, rating, feedback} = req.body;
-  const {id} = req.params;
+  const {rating, feedback} = req.body;
+  
   Class
-  .create({description, rating, feedback})
+  .create({ rating, feedback})
   .then(data => {
     res.redirect('/classy/classy')
   })
 
-  .update({_id: id},
-      {$set: {description, rating, feedback}})
-      .then(() => {
-      res.redirect('/classy/classy');
-      })
-      .catch(next)
 });
 
 

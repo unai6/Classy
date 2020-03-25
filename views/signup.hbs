@@ -1,16 +1,20 @@
+<div class="signup">
+    <h2><u>Create an account</u></h2>
 <form action='/auth/signup' method='post'>
 
-<label for='username'>Name </label>
-<input type='text' name='name' placeholder='Name'>
+{{!-- <label for='username'>Name </label> --}}
+<input class="signupFields" type='text' name='name' placeholder='Name' required='required'>
 
-<label for='email'>Email</label>
-<input type='email' name='email' placeholder='Email @'>
+{{!-- <label for='email'>Email</label> --}}
+<input class="signupFields" type='email' name='email' placeholder='Email @' required='required'>
 
-<label for='password'>Password </label>
-<input type='password' name='password' placeholder='Password'>
-<label for='isTeacher'>Want to become a teacher?</label>
-<input type='checkbox' name ='isTeacher'>
+{{!-- <label for='password'>Password </label> --}}
+<input class="signupFields" type='password' name='password' placeholder='Password' required= 'required'>
 
-<button type='submit'>Sign Up</button>
+<label class="bTeacher"for='isTeacher'>Want to become a teacher?</label>
+<input class="tick" type='checkbox' name ='isTeacher'>
+
+<button class="btn"type='submit'>Sign Up</button>
 
 </form>
+</div>
