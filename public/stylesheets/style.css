@@ -2,12 +2,13 @@
 * {
   margin:0;
   padding:0;
-  overflow: hidden;
+ 
 }
 
 body{
   margin:0;
-  padding:0
+  padding:0;
+  overflow: hidden;
 }
 
 .viewport-100{
@@ -51,7 +52,7 @@ color: rgb(107,226,19);
 .circle-container{
 position:relative;
 height:85vh;
-overflow:auto
+overflow:hidden
 
 }
 
@@ -279,7 +280,7 @@ overflow:auto
 
 .full-class {
   background-color: yellow;
-  height: 40vh;
+  height: 50vh;
   margin-top: 50%;
   margin-right: 10%;
   display: flex;
@@ -294,6 +295,7 @@ overflow:auto
 .h2-interface{
   font-family: 'pacifico';
   font-size:32px;
+  padding:15px;
 }
 
 .p-interface{
@@ -302,6 +304,7 @@ overflow:auto
 
 .teacher-interface{
   font-family: 'pacifico';
+  font-size:40px;
 
 }
 
