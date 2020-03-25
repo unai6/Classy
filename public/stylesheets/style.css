@@ -5,8 +5,7 @@
 }
 
 body{
-  height:100vh;
-  /*background-color:rgb(0,0,0, .9);*/
+  min-height:80vh;
 }
 
 .viewport-100{
@@ -16,6 +15,7 @@ body{
 .nav-bar{
   background: rgb(244,240,26);
   background: linear-gradient(315deg, rgba(244,240,26,0.8382703423166141) 42%, rgba(232,245,12,0.8718837876947654) 47%, rgba(224,236,11,0.9475140397956058) 49%, rgba(216,230,26,1) 51%, rgba(220,224,42,0.8158613787311799) 54%, rgba(220,236,18,1) 57%, rgba(252,249,22,0.9363095580028886) 61%);
+  margin-bottom:10px;
   height:7vh;
   position:relative;
 }
@@ -23,9 +23,9 @@ body{
 .footer{
   background: rgb(244,240,26);
   background: linear-gradient(315deg, rgba(244,240,26,0.8382703423166141) 42%, rgba(232,245,12,0.8718837876947654) 47%, rgba(224,236,11,0.9475140397956058) 49%, rgba(216,230,26,1) 51%, rgba(220,224,42,0.8158613787311799) 54%, rgba(220,236,18,1) 57%, rgba(252,249,22,0.9363095580028886) 61%);
-  height: 5vh;
-  position: relative;
-  transform: translate(0px, 100px);
+  height: 7vh;
+  position:static;
+  margin-bottom:0px;
 }
 
 
@@ -49,7 +49,7 @@ color: rgb(107,226,19);
 
 .circle-container{
 position:relative;
-height:80vh;
+min-height:86vh;
 }
 
 .circle-helix {
