@@ -1,11 +1,11 @@
 
 * {
-  margin:0;
-  padding:0
+  margin:0px;
+  padding:0px
 }
 
 body{
-  min-height:80vh;
+  min-height:100vh;
 }
 
 .viewport-100{
@@ -15,8 +15,7 @@ body{
 .nav-bar{
   background: rgb(244,240,26);
   background: linear-gradient(315deg, rgba(244,240,26,0.8382703423166141) 42%, rgba(232,245,12,0.8718837876947654) 47%, rgba(224,236,11,0.9475140397956058) 49%, rgba(216,230,26,1) 51%, rgba(220,224,42,0.8158613787311799) 54%, rgba(220,236,18,1) 57%, rgba(252,249,22,0.9363095580028886) 61%);
-  margin-bottom:10px;
-  height:7vh;
+  height:8vh;
   position:relative;
 }
 
@@ -49,7 +48,7 @@ color: rgb(107,226,19);
 
 .circle-container{
 position:relative;
-min-height:86vh;
+height:100vh;
 }
 
 .circle-helix {
