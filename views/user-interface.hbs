@@ -16,7 +16,7 @@
     {{this.time}} 
     - 
     {{this.name}} 
-    {{this.student.0.name}} <a href='/classy/class-details'>⊕</a>
+    {{this.student.0.name}} <a href='/classy/{{this._id}}/class-details'>⊕</a>
 
     <form action ='/classy/{{this._id}}/delete' method='POST'>  
         <button type ='submit'>DELETE</button>
