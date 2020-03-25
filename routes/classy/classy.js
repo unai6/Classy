@@ -40,6 +40,7 @@ router.use((req, res, next) => {
         //change the view of the dates
           classes.forEach(date => { 
           date.classDate2 = moment(date.classDate).format('ddd Do MMMM YYYY')
+            //console.log(classes)
         })
           
         res.render('user-interface.hbs', {classes, isTeacher: req.session.currentUser.isTeacher});
@@ -186,6 +187,35 @@ router.post ('/:id', (req, res, next) => {
 
 /////////////
 //class-details
+
+
+router.get('/:id/class-details', (req, res, next) => {
+
+  Class.findById(req.params.id)
+  .then(classId => {
+    res.render("class-details.hbs", {classId});
+  })
+  .catch(e => next(e));
+});
+
+router.post ('/:id', (req, res, next) => {
+  const {description, rating, feedback} = req.body;
+  const {id} = req.params;
+  Class
+  .create({description, rating, feedback})
+  .then(data => {
+    res.redirect('/classy/classy')
+  })
+
+  .update({_id: id},
+      {$set: {description, rating, feedback}})
+      .then(() => {
+      res.redirect('/classy/classy');
+      })
+      .catch(next)
+});
+
+
 
 
 
