@@ -187,41 +187,6 @@ router.post ('/:id', (req, res, next) => {
 /////////////
 //class-details
 
-/*router.get('/class-details', (req, res, next)=> {
-  
-  res.render('class-details')
-})
-router.get('/classy/class-details/:classId', (req, res, next) => {
-  let classId = req.params.classId;
-  if (!/^[0-9a-fA-F]{24}$/.test(classId)) { 
-    return res.status(404).render('not-found');
-  }
-  Class.findOne({'_id': classId})
-    .then(data => {
-      if (!data) {
-          return res.status(404).render('not-found');
-      }
-      res.render("class-details", { data })
-    })
-    .catch(next)
-});
-
-router.post('/class-details', (req, res, next) => {
-    const { description, feedback, rating } = req.body;
-   
-    Class.update(
-      { _id: req.query.data_id },
-      { $push: {description, feedback, rating } }
-    )
-      .then(data => {
-        res.redirect('/classy/class-details');
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  });*/
-
-
 
 
 
