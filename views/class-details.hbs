@@ -23,13 +23,19 @@
       {{!-- </fieldset> --}}
       <button class="btnCreate"type='submit'>Save</button>
     </form>
+    <section class="feedback_rating">
+      <div class="feedback">
+        <hr>
+        <div class="rating">
+<p><b>Rating:</b>    {{classId.rating}}</p>
+<div>
 {{#each classId.feedback}}
-{{this.feedback}}
-{{this.user}}
+<p><b>Feedback:</b></p>
+{{this.feedback}}<br>
+<i>{{this.user}}</i>
+<hr>
 {{/each}}
+</div>
 
-
-{{classId.rating}}
-
-
+</section>
 </div>
