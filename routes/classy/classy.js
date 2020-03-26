@@ -177,10 +177,10 @@ router.get("/:id/edit", (req, res, next) => {
 });
 
 router.post('/:id', (req, res, next) => {
-  const { name, description, classDate } = req.body;
+  const { name, description, time, classDate, } = req.body;
   const { id } = req.params;
   Class.update({ _id: id },
-    { $set: { name, description, classDate } })
+    { $set: { name, description, time, classDate } })
     .then(() => {
       res.redirect('/classy/classy');
     })
