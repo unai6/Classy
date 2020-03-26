@@ -48,6 +48,20 @@ color: rgb(107,226,19);
 
 }
 
+.profile-lanp {
+  color: white;
+  font-size: 50px;
+  font-family: 'pacifico';
+  position: absolute;
+  transform: translate(208%, 119%);
+  z-index: 2;
+  right: 63%;
+}
+
+.profile-lanp:hover{
+  filter: alpha(opacity=80);
+  opacity: .8
+}
 
 .circle-container{
 position:relative;
