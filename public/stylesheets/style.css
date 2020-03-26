@@ -81,10 +81,7 @@ overflow:hidden
   background: linear-gradient(42deg, rgba(107,226,19,0.9587185215883228) 42%, rgba(90,188,22,1) 47%, rgba(105,226,25,1) 49%, rgba(100,225,36,1) 51%, rgba(97,224,42,0.8158613787311799) 54%, rgba(106,236,18,1) 57%, rgba(95,224,46,1) 61%, rgba(23,255,0,1) 100%);
   box-shadow: 10px 10px 68px 46px rgba(242,232,39,0.84);
 
-
 }
-
-
 
 .circle-user {
   position: absolute;
@@ -96,8 +93,6 @@ overflow:hidden
   border-radius: 50%;
   background-color: rgba(255, 255, 51);
 }
-
-
 
 .circle-teacher {
   position: absolute;

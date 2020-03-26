@@ -1,7 +1,6 @@
 <div class="signup">
 <h1><u>Class details</u></h1>
-
-    <form action="/classy/{{classId.id}}" method='post'>
+    <form action="/classy/feedback/{{classId.id}}" method='post'>
       {{!-- <fieldset> --}}
           <label class="classDetailsLabel">Rating</label>
 	    <div class="rating">
@@ -17,18 +16,13 @@
          <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
     </div>
           <label class="classDetailsLabel">Feedback</label><br>
-          <textarea class="fields"
-                  rows = "3"
-                  cols = "40"
-                  name='feedback'
+          <textarea class="fields" type="text" name="feedback" rows = "3"cols = "40"
                   value='{{classId.feedback}}'></textarea>
       {{!-- </fieldset> --}}
-    
-    {{#if isTeacher}}
-      <label class="classDetailsLabel">Description</label>
-      <input class="fields" type='text' name='description' value='{{classId.description}}'>
-    {{/if}}
-
       <button class="btnCreate"type='submit'>Save</button>
     </form>
+{{#each classId.feedback}}
+{{this.feedback}}
+{{this.user}}
+{{/each}}
 </div>

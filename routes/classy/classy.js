@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const moment= require('moment')
+const multer = require('multer');
+const upload = multer({ dest: './public/uploads/' });
 
 const User = require('../../models/user');
 const Class = require('../../models/class');
-
+const Picture = require('../../models/picture');
 
 router.use((req, res, next) => {
     if (req.session.currentUser) {
@@ -130,7 +132,7 @@ router.use((req, res, next) => {
           next(err);
           return;
         }
-        console.log(users)
+        //console.log(users)
         res.render('create-class.hbs', {
           users
         });
@@ -143,7 +145,7 @@ router.use((req, res, next) => {
 
       let {name, description, classDate, time, student} = req.body;
       const teacher = req.session.currentUser._id
-      console.log(student)
+      //console.log(student)
 
 
        Class.create({name, description, classDate, time, teacher, student})
@@ -199,16 +201,22 @@ router.get('/:id/class-details', (req, res, next) => {
   .catch(e => next(e));
 });
 
-router.post ('/:id', (req, res, next) => {
-  const {rating, feedback} = req.body;
-  
-  Class
-  .create({ rating, feedback})
-  .then(data => {
-    res.redirect('/classy/classy')
-  })
-
-});
+router.post('/feedback/:_id', (req, res, next) => {
+  const { rating, feedback } = req.body;
+  const user = req.session.currentUser.name;
+  const{_id}=req.params;
+  Class.update(
+    { _id: _id },
+      { $push: { feedback: { user, feedback } } }
+    )
+    .then(clase => {
+      //console.log("rating is",rating)
+      res.redirect('/classy/' + _id + '/class-details');
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  });
 
 
 ///////////////// profile-view
@@ -217,7 +225,7 @@ router.get('/profile', (req, res, next) => {
   
   User.findById(req.session.currentUser._id)
   .then(userId => {
-    console.log(userId)
+    //console.log(userId)
     res.render("profile.hbs", userId);
   })
   .catch(e => next(e));
@@ -231,9 +239,46 @@ router.post('/edit/profile', (req, res, next) => {
   .then(data => {
     res.redirect('/classy/classy')
   })
-  
+   
 
 });
+
+
+
+//////////////// upload-picture
+/*
+router.get('/photo', function(req, res, next) {
+  Picture.find()
+    .then(pictures => {
+      console.log(pictures)
+      res.render('profile.hbs', pictures );
+    })
+    .catch(err => {
+      console.error(err);
+    });
+});
+
+
+router.post('/photo/upload', upload.single('photo'), (req, res, next) => {
+  const { name } = req.body;
+  const path = `/uploads/${req.file.filename}`;
+  const originalName = req.file.originalname;
+
+  Picture.create({ name, path, originalName })
+    .then(() => {
+      res.redirect('/classy/classy');
+    })
+    .catch(err => {
+      console.error(err);
+    });
+});*/
+
+
+
+
+
+
+
 
 
 
