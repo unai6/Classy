@@ -207,7 +207,7 @@ router.post('/feedback/:_id', (req, res, next) => {
   const{_id}=req.params;
   Class.update(
     { _id: _id },
-      { $push: { feedback: { user, feedback } } }
+      { $push: { feedback: { user, feedback } }}
     )
     .then(clase => {
       //console.log("rating is",rating)
@@ -242,8 +242,6 @@ router.post('/edit/profile', (req, res, next) => {
    
 
 });
-
-
 
 //////////////// upload-picture
 /*

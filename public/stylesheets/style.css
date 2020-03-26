@@ -251,7 +251,7 @@ overflow:hidden
   background-color:  rgb(107,226,19);;
   position: static;
   align-items: center;
-  height: 4vh;
+  height: 7vh;
   display: flex;
   justify-content: flex-end;
 }
@@ -260,7 +260,7 @@ overflow:hidden
 
   text-decoration: none;
   color: black;
-  font-size: 35px;
+  font-size: 45px;
   padding: 5px;
   margin-right: 15px;
   font-family:'pacifico'
