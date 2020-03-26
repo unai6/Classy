@@ -374,10 +374,10 @@ font-size:40px;
   font-weight: bold;
   position: absolute;
   top: 20%;
-  transform: translate(271%, 271%);
-  border: solid 2px;
+  transform: translate(266%, 256%);
+  border: solid 5px green;
   border-radius: 15px;
-  z-index:1
+  z-index: 1;
 }
 
 .new-class-btn {
