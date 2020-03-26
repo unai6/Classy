@@ -42,7 +42,7 @@ router.use((req, res, next) => {
           date.classDate2 = moment(date.classDate).format('ddd Do MMMM YYYY')
             //console.log(classes)
         })
-          
+      
         res.render('user-interface.hbs', {classes, isTeacher: req.session.currentUser.isTeacher});
       });
   });
@@ -211,7 +211,29 @@ router.post ('/:id', (req, res, next) => {
 });
 
 
+///////////////// profile-view
 
+router.get('/profile', (req, res, next) => {
+  
+  User.findById(req.session.currentUser._id)
+  .then(userId => {
+    console.log(userId)
+    res.render("profile.hbs", userId);
+  })
+  .catch(e => next(e));
+});
+
+
+router.post('/edit/profile', (req, res, next) => {
+  const {name} = req.body;
+  
+  User.findOneAndUpdate({_id: req.session.currentUser}, {name})
+  .then(data => {
+    res.redirect('/classy/classy')
+  })
+  
+
+});
 
 
 

@@ -49,7 +49,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //indico a la app donde estan mis rutas
-var indexRouter = require('./routes/index.js');
+var indexRouter = require('./routes/classy/index.js');
 var usersRouter = require('./routes/users.js');
 var authRouter = require('./routes/auth/auth.js');
 var classyRouter = require('./routes/classy/classy.js')
@@ -98,6 +98,7 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
 
 //app.listen(3001, () => console.log('project running on port 3001'));
 //>>NO NEED TO ADD IT >> In: bin/www hay port normalization to 3000 directly o considera quello che scrivo in archivo .env (zb. 3001)
