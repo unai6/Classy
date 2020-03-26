@@ -413,8 +413,8 @@ font-size:40px;
 }
 .form-label-name{
     position: relative;
-    transform: translate(250%);
-    right: 56%;
+    transform: translate(296%, 17%);
+    right: 64%;
 }
 
 .edit-form-btn-lg{
@@ -442,6 +442,13 @@ font-size:40px;
   text-align: center;
   font-family:'Red Hat Text';
   line-height:2.5
+}
+
+.edit-class-btn {
+  padding: 10px 20px;
+  border-radius: 15px;
+  position: relative;
+  right: -37%;
 }
 
 /* sign-up/log-in styles */
@@ -526,7 +533,7 @@ font-size:40px;
   height: 1.7em;
   min-width: 5em;
   font-size: 34px;
-  margin-top: 2em;
+  margin-top: 1em;
   margin-bottom: 2em;
   font-weight: bold;
 }
@@ -544,7 +551,7 @@ font-size:40px;
   min-height: 1.2em;
   min-width: 4em;
   font-size: 30px;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   text-align-last:center;
   font-weight: 600;
 }
