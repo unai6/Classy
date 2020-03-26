@@ -23,8 +23,12 @@
                   name='feedback'
                   value='{{classId.feedback}}'></textarea>
       {{!-- </fieldset> --}}
-      <label class="classDetailsLabel"> Description</label>
-      <input class="fields" type='text' name='description' value="{{classId.description}}">
+    
+    {{#if isTeacher}}
+      <label class="classDetailsLabel">Description</label>
+      <input class="fields" type='text' name='description' value='{{classId.description}}'>
+    {{/if}}
+
       <button class="btnCreate"type='submit'>Save</button>
     </form>
 </div>

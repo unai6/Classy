@@ -28,8 +28,10 @@
          {{this.student.0.name}} <a class='details-btn' href='/classy/{{this._id}}/class-details'><i class="fas fa-search-plus"></i></a> - <a class='edit-button' href='/classy/{{this._id}}/edit'>EDIT</a>
          <form action ='/classy/{{this._id}}/delete' method='POST'>  
         <button class='delete-btn' type ='submit'>DELETE</button>
-        </form> 
+        </form>
+        <hr> 
     {{/each}} 
+
 
     <a class='logOut-btn' href='/auth/logout'>Log out</a>
     </div>
@@ -43,7 +45,9 @@
     {{this.classDate2}}<br>
     {{this.time}}
     {{this.name}} 
-    {{this.description}}<a class='details-btn' href='/classy/{{this._id}}/class-details'>⊕</a><br>
+       -
+    {{this.description}}<a class='details-btn' href='/classy/{{this._id}}/class-details'> <i class="fas fa-search-plus"></i></a>
+    <hr>
 
     {{/each}}
 

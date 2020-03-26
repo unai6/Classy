@@ -451,6 +451,10 @@ font-size:40px;
   right: -37%;
 }
 
+hr {
+  color: green;
+  border: solid 1px;
+}
 /* sign-up/log-in styles */
 .signup{
   min-height: 100vh;
@@ -515,7 +519,7 @@ font-size:40px;
 }
 /* END of sign-up/log-in styles */
 
-/* create a class_styles */
+/* create class styles */
 .fields {
   background-color: rgb(107,186,19);
   border-style: none;
@@ -530,18 +534,18 @@ font-size:40px;
 .btnCreate{
   font-size: 1em;
   border-radius: 10px;
-  height: 1.7em;
-  min-width: 5em;
+  min-height: 2.7em;
+  width: 7em;
   font-size: 34px;
   margin-top: 1em;
-  margin-bottom: 2em;
+  margin-bottom: 3em;
   font-weight: bold;
+  padding: 10px 5px;
 }
 
 .labelCreate{
   font-family: 'Pacifico';
   font-size: 2.5em;
-  /* padding-bottom: 2em; */
 }
 
 .signup select{
@@ -551,12 +555,11 @@ font-size:40px;
   min-height: 1.2em;
   min-width: 4em;
   font-size: 30px;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
   text-align-last:center;
   font-weight: 600;
 }
 /* END of create class styles */
-
 /* class-details styles */
 .signup h1{
   font-family: 'Pacifico';
