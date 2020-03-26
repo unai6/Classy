@@ -1,11 +1,9 @@
-
-<h1>Class details</h1>
+<div class="signup">
+<h1><u>Class details</u></h1>
 
     <form action="/classy/{{classId.id}}" method='post'>
-      <fieldset>
-          <label>Rating</label>
-        <div class="container">
-	    <div class="row">
+      {{!-- <fieldset> --}}
+          <label class="classDetailsLabel">Rating</label>
 	    <div class="rating">
          <input type="radio" id="star10" name="rating" value="10" /><label for="star10" title="Rocks!">5 stars</label>
          <input type="radio" id="star9" name="rating" value="9" /><label for="star9" title="Rocks!">4 stars</label>
@@ -18,21 +16,15 @@
          <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Sucks big tim">2 stars</label>
          <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
     </div>
-	</div>
-</div>
-        </p>
-        <p>
-          <label class='feedback'>Feedback</label>
-          <textarea id = "Feedback"
+          <label class="classDetailsLabel">Feedback</label><br>
+          <textarea class="fields"
                   rows = "3"
                   cols = "40"
                   name='feedback'
                   value='{{classId.feedback}}'></textarea>
-        </p>
-      </fieldset>
-
-      <button type='submit'>Save</button>
+      {{!-- </fieldset> --}}
+      <label class="classDetailsLabel"> Description</label>
+      <input class="fields" type='text' name='description' value="{{classId.description}}">
+      <button class="btnCreate"type='submit'>Save</button>
     </form>
-
-
-{{classId.description}}
+</div>

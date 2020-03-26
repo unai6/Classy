@@ -1,16 +1,20 @@
-<h2>Edit Class</h2>
-<form action="/classy/{{classEdit.id}}" method="post">
-<label for="name">Name</label>
-<input type="text" name="name" value="{{classEdit.name}}" id="">
+
+<div class='div-edit-form'>
+<h2 class='form-label-h2'>Edit Class</h2>
+<form class='details-form' action="/classy/{{classEdit.id}}" method="post">
+<label class='form-label-name' for="name">Name</label>
+<input class='edit-form-btn-lg' type="text" name="name" value="{{classEdit.name}}" id="">
 <br />
-<label for="occupation">Description</label>
-<input type="text" name="description" value="{{classEdit.description}}" id="">
-<label for="classDate">Class Date</label>
-<input type="date" name="classDate" value="{{classEdit.classDate}}" id="">
-<label for="time">Class Time</label>
-<input type="time" name="time" value="{{classEdit.time}}" id="">
+<label class='form-label' for="occupation">Description</label>
+<input class='edit-form-btn-lg' type="text" name="description" value="{{classEdit.description}}" id="">
+<label  class='form-label' for="classDate">Class Date</label>
+<input class='edit-form-btn' type="date" name="classDate" value="{{classEdit.classDate}}" id="">
+<label  class='form-label' for="time">Class Time</label>
+<input class='edit-form-btn' type="time" name="time" value="{{classEdit.time}}" id="">
 <br />
 
 <br />
 <button type="submit">Edit Class</button>
 </form>
+
+</div>

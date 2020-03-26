@@ -253,7 +253,7 @@ overflow:hidden
 /* user-interface styles*/
 
 .userInt-nav {
-  background-color: green;
+  background-color:  rgb(107,226,19);;
   position: static;
   align-items: center;
   height: 4vh;
@@ -265,7 +265,7 @@ overflow:hidden
 
   text-decoration: none;
   color: black;
-  font-size: 25px;
+  font-size: 35px;
   padding: 5px;
   margin-right: 15px;
   font-family:'pacifico'
@@ -280,7 +280,7 @@ overflow:hidden
 
 .full-class {
   background-color: yellow;
- /* min-height: 50vh;*/
+ min-height: 50vh;
   margin-top: 50%;
   margin-right: 10%;
   display: flex;
@@ -292,10 +292,13 @@ overflow:hidden
   line-height:2.1;
 }
 
-.h2-interface{
+.h2-interface {
   font-family: 'pacifico';
-  font-size:32px;
-  padding:15px;
+  font-size: 43px;
+  padding: 15px;
+  text-decoration: underline;
+  color: rgb(107,186,19);
+  font-weight: bold;
 }
 
 .p-interface{
@@ -304,7 +307,7 @@ overflow:hidden
 
 .teacher-interface{
   font-family: 'pacifico';
-  font-size:40px;
+  font-size:43px;
 
 }
 
@@ -313,14 +316,132 @@ overflow:hidden
   
 }
 
-
-
-
 .edit-button {
-  border: solid 1px blue;
+  border: solid 4px green;
   border-radius: 15px;
   padding: 10px;
-  font-size: 18px;
+  font-size: 25px;
+  color:black
+}
+
+.delete-btn {
+  position: relative;
+  transform: translate(-134%, -20%);
+  left: 60%;
+  border-radius: 15px;
+  padding: 0 15px 0 15px;
+  font-size: 25px;
+  background: rgb(107,186,19);
+  font-weight: bold;
+  border: solid 2px green;
+}
+
+
+.details-btn{
+color:green;
+font-weight:bold;
+font-size:40px;
+}
+
+.new-class-parent{
+  position:relative
+}
+
+.newClass-a {
+  font-family: 'pacifico';
+  font-size: 43px;
+  padding: 15px;
+  color: rgb(107,186,19);
+  font-weight: bold;
+  position: absolute;
+  top: 20%;
+  transform: translate(271%, 271%);
+  border: solid 2px;
+  border-radius: 15px;
+  z-index:1
+}
+
+.new-class-btn {
+  font-size: 93px;
+  position: absolute;
+  transform: translate(390%, 122%);
+  top: 20%;
+  right: 55%;
+  z-index: 2;
+}
+
+.fa-plus-circle{
+  content: "\f055";
+  color: green;
+  z-index: 2;
+  font-size:40px;
+ 
+}
+
+
+.logOut-btn{
+  font-family: 'pacifico';
+  font-size: 43px;
+  padding: 15px;
+  text-decoration: underline;
+  color: rgb(107,186,19);
+  font-weight: bold;
+}
+
+/* edit classes styles*/
+
+.div-edit-form{
+  height:100vh;
+  position:relative;
+  background-color:rgb(244,240,26)
+
+}
+
+.details-form {
+  position: absolute;
+  width: 30%;
+  transform: translate(87%, 55%);
+  bottom: 50%;
+  font-size: 50px;
+  line-height: 2.5;
+  font-family: 'pacifico';
+}
+
+.form-label{
+  position: relative;
+  transform: translate(50%,22px);
+}
+.form-label-name{
+    position: relative;
+    transform: translate(250%);
+    right: 56%;
+}
+
+.edit-form-btn-lg{
+  background-color: rgb(107,186,19);
+  border-style: none;
+  border-radius: 10px;
+  text-align: center;
+  font-family:'Red Hat Text';
+  line-height:2.5;
+  width:173%
+}
+
+.form-label-h2{
+  text-align: center;
+  padding: 15%;
+  font-family: 'pacifico';
+  font-size: 4em;
+  text-decoration: underline;
+}
+
+.edit-form-btn{
+  background-color: rgb(107,186,19);
+  border-style: none;
+  border-radius: 10px;
+  text-align: center;
+  font-family:'Red Hat Text';
+  line-height:2.5
 }
 
 /* sign-up/log-in styles */
@@ -386,6 +507,67 @@ overflow:hidden
   text-align: center;
 }
 /* END of sign-up/log-in styles */
+
+/* create a class_styles */
+.fields {
+  background-color: rgb(107,186,19);
+  border-style: none;
+  border-radius: 10px;
+  text-align: center;
+  font-family:'Red Hat Text';
+  font-size: 2em;
+  height: 3em;
+  width: 15em;
+  margin-bottom: 3em;
+}
+.btnCreate{
+  font-size: 1em;
+  border-radius: 10px;
+  height: 1.7em;
+  min-width: 5em;
+  font-size: 34px;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-weight: bold;
+}
+
+.labelCreate{
+  font-family: 'Pacifico';
+  font-size: 2.5em;
+  /* padding-bottom: 2em; */
+}
+
+.signup select{
+  font-size: 1.2em;
+  border-radius: 10px;
+  color: black;
+  min-height: 1.2em;
+  min-width: 4em;
+  font-size: 30px;
+  margin-bottom: 2em;
+  text-align-last:center;
+  font-weight: 600;
+}
+/* END of create class styles */
+
+/* class-details styles */
+.signup h1{
+  font-family: 'Pacifico';
+  font-size: 4em;
+  text-align: center;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+.classDetailsLabel{
+  font-family: 'Pacifico';
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.rating{
+  margin: 1.5em 0;
+}
+/* END of class-details styles */
 
 /* necesita quedarse al fondo del css */
 input:-webkit-autofill,

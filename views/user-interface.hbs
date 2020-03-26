@@ -3,6 +3,13 @@
     <a class='home-a' href='/home'>Home</a>
 </nav>
 
+{{#if isTeacher}}
+<div class= 'new-class-parent'>
+<a class='new-class-btn'><i class="fas fa-plus-circle"></i></a>
+<a class='newClass-a' href='/classy/create-class'> New class</a>
+</div>
+{{/if}}
+
 <div class='full-class'>
 
     <h2 class='h2-interface'>YOUR CLASSES</h2>
@@ -17,18 +24,14 @@
          {{this.time}} 
             - 
          {{this.name}} 
-         {{this.student.0.name}} <a href='/classy/{{this._id}}/class-details'>⊕</a>
-
-    <form action ='/classy/{{this._id}}/delete' method='POST'>  
-        <button type ='submit'>DELETE</button>
-    </form>
-        <a class='edit-button' href='/classy/{{this._id}}/edit'>EDIT</a><br>
-        <br>
-    
+            -
+         {{this.student.0.name}} <a class='details-btn' href='/classy/{{this._id}}/class-details'><i class="fas fa-search-plus"></i></a> - <a class='edit-button' href='/classy/{{this._id}}/edit'>EDIT</a>
+         <form action ='/classy/{{this._id}}/delete' method='POST'>  
+        <button class='delete-btn' type ='submit'>DELETE</button>
+        </form> 
     {{/each}} 
 
-<a href='/classy/create-class'>Create a new class</a> <br>
-    <a href='/auth/logout'>Log out</a>
+    <a class='logOut-btn' href='/auth/logout'>Log out</a>
     </div>
 {{/if}}
 
@@ -40,12 +43,12 @@
     {{this.classDate2}}<br>
     {{this.time}}
     {{this.name}} 
-    {{this.description}}<a href='/classy/{{this._id}}/class-details'>⊕</a><br>
+    {{this.description}}<a class='details-btn' href='/classy/{{this._id}}/class-details'>⊕</a><br>
 
     {{/each}}
 
     <br>
-    <a href='/auth/logout'>Log out</a>
+    <a class='logOut-btn' href='/auth/logout'>Log out</a>
 
     </div>
     {{/unless}}
