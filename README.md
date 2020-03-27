@@ -163,7 +163,7 @@ teacher: { type:  Schema.Types.ObjectId, ref:'User'}
 
 ## Links
 
-##Heroku
+### Heroku
 https://classy-paola-unai.herokuapp.com/
 
 ### Trello
