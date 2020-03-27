@@ -23,7 +23,7 @@ Display all the classes scheduled with my students
 Option to delete classes 
 -   **class details** 
 Display class details 
--  **Post feedbacks and ratings **
+-  **Post feedbacks and ratings**
 In class details
 
 **As a student user:**
@@ -32,7 +32,7 @@ In class details
 Being able to display classes assigned by the teacher
 -   **class details** 
 Display class details 
--  **Post feedbacks and ratings **
+-  **Post feedbacks and ratings**
 In class details
 
 
