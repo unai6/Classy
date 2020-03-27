@@ -163,12 +163,12 @@ teacher: { type:  Schema.Types.ObjectId, ref:'User'}
 
 ## Links
 
+### Trello
+https://trello.com/b/fEKSZN7Q/proyecto-2-paola-unai
+  
+### Slides
+https://docs.google.com/presentation/d/1OpPFjo7uLVdfcGfBkB09QdRv2K45Qs5uATomqT0rjM0/edit#slide=id.gc6f90357f_0_31
+
 ### Heroku
 https://classy-paola-unai.herokuapp.com/
 
-### Trello
-[https://trello.com/b/fEKSZN7Q/proyecto-2-paola-unai](https://trello.com/b/fEKSZN7Q/proyecto-2-paola-unai)]
-  
-
-### Slides
-https://docs.google.com/presentation/d/1OpPFjo7uLVdfcGfBkB09QdRv2K45Qs5uATomqT0rjM0/edit#slide=id.gc6f90357f_0_35)
