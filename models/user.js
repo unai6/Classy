@@ -8,8 +8,10 @@ const userSchema = new Schema({
   email: String,
   password: {type: String, require: true, unique: true},
   isTeacher: {type: Boolean, default: false},
-  classPrice: {type: Number, default: null}
+  classPrice: {type: Number, default: null},
+  photo: [{type:Schema.Types.ObjectId, ref:'Picture'}]
 }, 
+
 {
   timestamps: true
 })

@@ -17,7 +17,8 @@ feedback: [{
     rating: String,
     }],
 student: [{ type: Schema.Types.ObjectId, ref:'User'}],
-teacher: { type: Schema.Types.ObjectId, ref:'User'}
+teacher: { type: Schema.Types.ObjectId, ref:'User'},
+
 
 },
 {

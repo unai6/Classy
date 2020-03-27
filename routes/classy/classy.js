@@ -43,9 +43,9 @@ router.get('/classy', (req, res, next) => {
       //change the view of the dates
       classes.forEach(date => {
         date.classDate2 = moment(date.classDate).format('ddd Do MMMM YYYY');
-        //console.log(classes)
+       // console.log(classes)
       })
-
+     
       res.render('user-interface.hbs', { classes, isTeacher: req.session.currentUser.isTeacher });
     });
 });
@@ -232,7 +232,7 @@ router.post('/class/:classId/feedback/:feedbackId/delete', (req, res, next) => {
 
   Class.findByIdAndUpdate(classId, { $pull: { feedback: { _id: feedbackId } } })
     .then(function (data) {
-      console.log(data)
+      //console.log(data)
       res.redirect(`/classy/${classId}/class-details`)
     })
     .catch(error => {
@@ -266,38 +266,13 @@ router.post('/edit/profile', (req, res, next) => {
 
 //////////////// upload-picture
 
-//// multer
-
-/*router.get('/photo', function(req, res, next) {
-  Picture.find()
-    .then(pictures => {
-      //console.log(pictures)
-      res.render('profile.hbs', pictures );
-    })
-    .catch(err => {
-      console.error(err);
-    });
-});
-
-router.post('/photo/upload', upload.single('photo'), (req, res, next) => {
-  const { name } = req.body;
-  const path = `/uploads/${req.file.filename}`;
-  const originalName = req.file.originalname;
-
-  Picture.create({ name, path, originalName })
-    .then(() => {
-      res.redirect('/classy/classy');
-    })
-    .catch(err => {
-      console.error(err);
-    });
-});
-
 //// cloudinary
 
 router.get('/photo/add', (req, res, next) => {
-  res.render('photo-add');
-});
+
+    res.render('profile.hbs');
+
+  })
 
 router.post('/photo/add', uploadCloud.single('photo'), (req, res, next) => {
   const { title, description } = req.body;
@@ -306,14 +281,14 @@ router.post('/photo/add', uploadCloud.single('photo'), (req, res, next) => {
 
   Picture.create({ title, description, imgPath, imgName })
     .then(photo => {
-      res.redirect('/classy/classy');
+      res.redirect('/classy/profile');
+        console.log(photo.imgPath)
     })
     .catch(error => {
       console.log(error);
     });
 });
 
-*/
 
 
 module.exports = router

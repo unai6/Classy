@@ -1,22 +1,23 @@
 <div class="signup">
-   <a class='back-btn' href="javascript:history.back()">Back</a>
+   <a class='back-btn' href="/classy/classy">Back to profile</a>
 
-<!-- <section>
-    <h2>Upload your photo</h2>
-    <form action="/classy/photo/upload" method="post" enctype="multipart/form-data">
-        <input type="text" name="name">
-        <input type="file" name="photo">
-        <input type="submit" value="Save">
-    </form>
-</section>
 
-<section>
-    {{#each pictures}}
-    <h3>{{name}}</h3>
-    <img src="{{path}}" alt="{{originalName}}">
-    {{/each}}
-</section> -->
+<h2>Upload a new photo</h2>
+<form action="/classy/photo/add" method="post" enctype="multipart/form-data">
+    <label>Title</label>
+    <input type="text" name="title">
 
+    <label>Description</label>
+    <input type="text" name="description">
+
+    <label>Poster</label>
+    <input type="file" name="photo">
+
+    <input type="submit" value="SAVE">
+</form>
+    <div>
+    <img src="{{photo.imgPath}}" alt='photo'>
+    </div>
 
 <h1>Profile</h1>
 
