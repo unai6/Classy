@@ -204,16 +204,31 @@ router.post('/feedback/:_id', (req, res, next) => {
   const { rating, feedback } = req.body;
   const user = req.session.currentUser.name;
   const { _id } = req.params;
-  Class.findByIdAndUpdate(_id,
-    { $push: { feedback: { user, feedback } }, $set: { rating: rating } }
-
-  )
+  Class.findByIdAndUpdate(_id, 
+      { $push : { feedback: { user, feedback, rating } }} 
+   )
     .then(clase => {
-      console.log("rating is", rating)
-      res.redirect('/classy/' + _id + '/class-details');
+      console.log(clase)
+     // console.log("rating is", rating)
+      res.redirect(`/classy/${_id}/class-details`);
     })
     .catch(error => {
       console.log(error);
+    });
+});
+
+router.post('/class/:classId/feedback/:feedbackId/delete', (req, res, next) => {
+  const {classId} = req.params
+//console.log(classId)
+const {feedbackId} = req.params
+
+  Class.findByIdAndUpdate(classId, {$pull: {feedback: {_id: feedbackId}}})
+    .then(function (data) { 
+      console.log(data)
+      res.redirect(`/classy/${classId}/class-details`)
+  })
+    .catch(error => {
+      console.log(error)
     });
 });
 
@@ -255,7 +270,6 @@ router.get('/photo', function(req, res, next) {
     });
 });
 
-
 router.post('/photo/upload', upload.single('photo'), (req, res, next) => {
   const { name } = req.body;
   const path = `/uploads/${req.file.filename}`;
@@ -269,14 +283,4 @@ router.post('/photo/upload', upload.single('photo'), (req, res, next) => {
       console.error(err);
     });
 });*/
-
-
-
-
-
-
-
-
-
-
 module.exports = router
