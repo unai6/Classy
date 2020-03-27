@@ -496,7 +496,15 @@ hr {
 }
 
 
+/*error message class*/
 
+.errorMessage{
+  margin-top: 2em;
+  font-size: 2em;
+  color: rgb(124, 41, 41);
+  font-weight: bold;
+  text-align: center;
+}
 /* sign-up/log-in styles */
 .signup{
   min-height: 100vh;
@@ -552,7 +560,7 @@ hr {
   width: 2em;
 }
 
-.signup> p{
+.signup > p{
   margin-top: 2em;
   font-size: 2em;
   color: rgb(124, 41, 41);

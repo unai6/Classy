@@ -20,7 +20,7 @@ router.post('/signup', (req, res, next) => {
 
     if (name === '' || password === '') {
       res.render('signup.hbs', {
-        errorMessage: 'Please provide a name and password to sign up'
+        errorMessage: 'Please fill all the fields to sign up'
       });
       return;
     }
@@ -61,7 +61,6 @@ router.get('/login', (req, res, next) =>{
     res.render('login.hbs')
     
 })
-
 
 router.post('/login', (req, res,next) => {
     const {email, password} = req.body

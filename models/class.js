@@ -16,7 +16,6 @@ feedback: [{
     feedback: String,
     rating: String,
     }],
-//level : {type: String,  enum: [ 'Basic', 'Intermediate', 'Advanced'] },  
 student: [{ type: Schema.Types.ObjectId, ref:'User'}],
 teacher: { type: Schema.Types.ObjectId, ref:'User'}
 

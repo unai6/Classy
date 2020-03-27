@@ -3,6 +3,7 @@ const router = express.Router();
 const moment = require('moment')
 const multer = require('multer');
 const upload = multer({ dest: './public/uploads/' });
+const uploadCloud = require('../../config/cloudinary.js');
 
 const User = require('../../models/user');
 const Class = require('../../models/class');
@@ -41,7 +42,7 @@ router.get('/classy', (req, res, next) => {
       }
       //change the view of the dates
       classes.forEach(date => {
-        date.classDate2 = moment(date.classDate).format('ddd Do MMMM YYYY')
+        date.classDate2 = moment(date.classDate).format('ddd Do MMMM YYYY');
         //console.log(classes)
       })
 
@@ -141,21 +142,32 @@ router.get('/create-class', (req, res, next) => {
 
 
 router.post('/create-class', (req, res, next) => {
-
   let { name, description, classDate, time, student } = req.body;
   const teacher = req.session.currentUser._id
   //console.log(student)
-
-
+    if (name === '' || description === '' || classDate === ''|| time === '') {
+      User.find({ isTeacher: false },
+        (err, users) => {
+          if (err) {
+            next(err);
+            return;
+          }
+          //console.log(users)
+          res.render('create-class.hbs', {
+            users,
+            errorMessage: 'Please fill all the fields to create a new class!'
+          });
+        }
+      );
+      return;
+    }
   Class.create({ name, description, classDate, time, teacher, student })
     .then(data => {
       res.redirect('/classy/classy')
     })
 });
 
-
 //////Delete classes
-
 router.post('/:id/delete', (req, res, next) => {
 
   Class.findByIdAndRemove(req.params.id)
@@ -164,9 +176,7 @@ router.post('/:id/delete', (req, res, next) => {
     .catch(error => next(error))
 });
 
-
 ///edit classes
-
 router.get("/:id/edit", (req, res, next) => {
   Class.findById(req.params.id)
 
@@ -189,8 +199,6 @@ router.post('/:id', (req, res, next) => {
 
 /////////////
 //class-details
-
-
 router.get('/:id/class-details', (req, res, next) => {
   const isTeacher = req.session.currentUser.isTeacher
   Class.findById(req.params.id)
@@ -204,12 +212,12 @@ router.post('/feedback/:_id', (req, res, next) => {
   const { rating, feedback } = req.body;
   const user = req.session.currentUser.name;
   const { _id } = req.params;
-  Class.findByIdAndUpdate(_id, 
-      { $push : { feedback: { user, feedback, rating } }} 
-   )
+  Class.findByIdAndUpdate(_id,
+    { $push: { feedback: { user, feedback, rating } } }
+  )
     .then(clase => {
-      console.log(clase)
-     // console.log("rating is", rating)
+     // console.log(clase)
+      // console.log("rating is", rating)
       res.redirect(`/classy/${_id}/class-details`);
     })
     .catch(error => {
@@ -218,15 +226,15 @@ router.post('/feedback/:_id', (req, res, next) => {
 });
 
 router.post('/class/:classId/feedback/:feedbackId/delete', (req, res, next) => {
-  const {classId} = req.params
-//console.log(classId)
-const {feedbackId} = req.params
+  const { classId } = req.params
+  //console.log(classId)
+  const { feedbackId } = req.params
 
-  Class.findByIdAndUpdate(classId, {$pull: {feedback: {_id: feedbackId}}})
-    .then(function (data) { 
+  Class.findByIdAndUpdate(classId, { $pull: { feedback: { _id: feedbackId } } })
+    .then(function (data) {
       console.log(data)
       res.redirect(`/classy/${classId}/class-details`)
-  })
+    })
     .catch(error => {
       console.log(error)
     });
@@ -234,7 +242,6 @@ const {feedbackId} = req.params
 
 
 ///////////////// profile-view
-
 router.get('/profile', (req, res, next) => {
 
   User.findById(req.session.currentUser._id)
@@ -258,11 +265,13 @@ router.post('/edit/profile', (req, res, next) => {
 });
 
 //////////////// upload-picture
-/*
-router.get('/photo', function(req, res, next) {
+
+//// multer
+
+/*router.get('/photo', function(req, res, next) {
   Picture.find()
     .then(pictures => {
-      console.log(pictures)
+      //console.log(pictures)
       res.render('profile.hbs', pictures );
     })
     .catch(err => {
@@ -282,5 +291,29 @@ router.post('/photo/upload', upload.single('photo'), (req, res, next) => {
     .catch(err => {
       console.error(err);
     });
-});*/
+});
+
+//// cloudinary
+
+router.get('/photo/add', (req, res, next) => {
+  res.render('photo-add');
+});
+
+router.post('/photo/add', uploadCloud.single('photo'), (req, res, next) => {
+  const { title, description } = req.body;
+  const imgPath = req.file.url;
+  const imgName = req.file.originalname;
+
+  Picture.create({ title, description, imgPath, imgName })
+    .then(photo => {
+      res.redirect('/classy/classy');
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
+
+*/
+
+
 module.exports = router

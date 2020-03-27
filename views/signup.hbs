@@ -2,7 +2,14 @@
      <a class='back-btn' href="javascript:history.back()">Back</a>
 
     <h2><u>Create an account</u></h2>
-<form action='/auth/signup' method='post'>
+
+<div class='errorMessage'>
+    {{#if errorMessage}}
+    {{errorMessage}}
+    {{/if}}
+</div>
+
+<form action='/auth/signup' method='post' novalidate>
 
 {{!-- <label for='username'>Name </label> --}}
 <input class="signupFields" type='text' name='name' placeholder='Name' required='required'>
