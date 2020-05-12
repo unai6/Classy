@@ -15,8 +15,8 @@ body {
 
 .viewport-100 {
   background-color: #FFFFFF;
-  
-  
+
+
 }
 
 .nav-bar {
@@ -24,23 +24,32 @@ body {
   height: 7.5em;
   position: fixed;
   z-index: 2;
-  width:100vw
+  width: 100vw
+}
+
+.classy-h2 {
+  font-family: 'Spartan', sans-serif;
+  font-size: 64px;
+  text-decoration: none;
+  color: #2ABB9B;
+  position: relative;
+
 }
 
 .button.has-shadow {
-  box-shadow: 3px 3px 5px 0 rgba(0,0,0,.1);
+  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .1);
 }
 
-.profile-toggle-btn{
-background:#2ABB9B
+.profile-toggle-btn {
+  background: #2ABB9B
 }
 
 
 .nav-i {
   width: 17vw;
   padding: 0.5em;
-  margin:10px;
-  border-radius:100px
+  margin: 10px;
+  border-radius: 100px
 }
 
 .footer {
@@ -50,43 +59,65 @@ background:#2ABB9B
   margin-bottom: 0px;
 }
 
-.classy-h2 {
-  font-family: 'Spartan', sans-serif;
-  font-size: 64px;
-  text-decoration: none;
-  color: #2ABB9B;
-
-}
-
-
-
-.profile-lanp {
-  color: black;
-  font-size: 45px;
-  font-family: 'Spartan', sans-serif;
-  z-index: 2;
-  position: fixed;
-  right: 3em;
-
-
-}
 
 .profile-lanp:hover {
   color: #2ABB9B
 }
 
 @media (min-width: 500px) and (max-width: 1000px) {
-  
-  .nav-list{
-    transform: translate(79vw, 0vh); 
-    font-size: 20px
+
+  .nav-bar {
+    background: #FFC244;
+    height: 7.5em;
+    position: fixed;
+    z-index: 2;
+    width: 100vw;
+    border-bottom-left-radius: 50% 100%;
+    border-bottom-right-radius: 50% 100%;
   }
 
-  .ddm-list{
-    border:none;
-     background-color:transparent
+
+
+  .nav-list {
+    transform: translate(62vw, 0vh);
+    font-size: 25px
   }
-  
+
+  .nav-i {
+    width: 30vw;
+    padding: 0.5em;
+    margin: 10px;
+    border-radius: 100px
+  }
+
+  .ddm-list {
+    border: none;
+    background-color: transparent
+  }
+
+  .classy-h2 {
+    font-family: 'Spartan', sans-serif;
+    font-size: 64px;
+    text-decoration: none;
+    color: #2ABB9B;
+    position: relative;
+    transform: translate(35vw, 12vh);
+  }
+
+  .grad-cap {
+    font-size: 32px;
+    position: relative;
+    transform: translate(-.5vw, -3vh);
+}
+  .profile-lanp {
+    color: black;
+    font-size: 45px;
+    font-family: 'Spartan', sans-serif;
+    z-index: 2;
+    position: fixed;
+    right: 10em;
+  }
+
   .circle-helix {
     position: absolute;
     border: solid #F8BA3A 8px;
@@ -115,7 +146,7 @@ background:#2ABB9B
     height: 350px;
     width: 350px;
     border-radius: 50%;
-    box-shadow: 10px 10px 68px 46px #F8BA3A; 
+    box-shadow: 10px 10px 68px 46px #F8BA3A;
 
   }
 
@@ -131,7 +162,7 @@ background:#2ABB9B
   }
 
   .p-new {
-    color:#2ABB9B;
+    color: #2ABB9B;
     font-family: 'Spartan', sans-serif;
     position: absolute;
     top: 10%;
@@ -160,26 +191,42 @@ background:#2ABB9B
     font-size: 40px;
   }
 
-  .teachers-list{
+  .teachers-list {
     text-align: center;
     position: relative;
     transform: translate(0%, 70vh);
     margin: 0 5.5em !important
   }
+
+  .footer {
+    background: #FFC244;
+    height: 7vh;
+    position: static;
+    margin-bottom: 0px;
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+  }
 }
 
 @media (min-width: 1100px) {
 
-  .nav-list{
-    transform: translate(-10vw, 0vh); 
+  .nav-list {
+    transform: translate(-10vw, 0vh);
     font-size: 20px
   }
 
-  .ddm-list{
-    border:none;
-    background-color:white
+  .ddm-list {
+    border: none;
+    background-color: white
   }
-  
+
+  .grad-cap {
+    font-size: 25px;
+    position: relative;
+    transform: translate(-.5vw, -5vh);
+  }
+
+
   .circle-helix {
     position: absolute;
     border: solid #F8BA3A 8px;
@@ -200,7 +247,7 @@ background:#2ABB9B
 
 
   .circle-signup {
-    color:#2ABB9B;
+    color: #2ABB9B;
     position: absolute;
     left: 50%;
     bottom: 50%;
@@ -208,7 +255,7 @@ background:#2ABB9B
     height: 250px;
     width: 250px;
     border-radius: 50%;
-    box-shadow: 10px 10px 68px 46px #F8BA3A; 
+    box-shadow: 10px 10px 68px 46px #F8BA3A;
 
   }
 
@@ -233,7 +280,8 @@ background:#2ABB9B
   }
 
   .p-SU {
-    font-family: 'Jost', sans-serif;;
+    font-family: 'Jost', sans-serif;
+    ;
     position: absolute;
     bottom: 30%;
     transform: translate(66%);
@@ -252,12 +300,12 @@ background:#2ABB9B
     text-decoration: none !important;
     color: white;
     font-size: 31px;
-} 
   }
+}
 
-  .teachers-list{
-    position: relative;
-    transform: translate(0vh, 28vh);
+.teachers-list {
+  position: relative;
+  transform: translate(0vh, 28vh);
 }
 
 
@@ -773,8 +821,9 @@ input:-webkit-autofill:active {
   transition: all 5000s ease-in-out 0s;
   transition-property: background-color, color;
 }
+
 /* profile picture */
 
-.profile-pic{
-  width:7.5em
+.profile-pic {
+  width: 7.5em
 }

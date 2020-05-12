@@ -10,7 +10,7 @@ const bcryptSalt = 10;
 
 
 router.get('/signup', (req, res, next) => {
-  !req.session.currentUser ? res.render('signup.hbs') : res.render('user-interface')
+  !req.session.currentUser ? res.render('signup.hbs') : res.redirect('/classy/classy')
 
 });
 
@@ -67,7 +67,7 @@ router.post('/signup', (req, res, next) => {
 //LOGIN
 router.get('/login', (req, res, next) => {
 
-  !req.session.currentUser ? res.render('login') : res.render('user-interface')
+  !req.session.currentUser ? res.render('login') : res.redirect('/classy/classy')
 
 })
 
