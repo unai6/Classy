@@ -1,163 +1,273 @@
-
 * {
-  margin:0;
-  padding:0;
- 
+  margin: 0;
+  padding: 0;
+
 }
 
-body{
-  margin:0;
-  padding:0;
-  
+body {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-.bg{
-  background-color:rgb(0,0,0, .9);
+.bg {
   height: 100vh;
 }
 
-.viewport-100{
-  background-color:rgb(0,0,0, .9);
+.viewport-100 {
+  background-color: #FFFFFF;
+  
+  
 }
 
-.nav-bar{
-  background: rgb(244,240,26);
-  background: linear-gradient(315deg, rgba(244,240,26,0.8382703423166141) 42%, rgba(232,245,12,0.8718837876947654) 47%, rgba(224,236,11,0.9475140397956058) 49%, rgba(216,230,26,1) 51%, rgba(220,224,42,0.8158613787311799) 54%, rgba(220,236,18,1) 57%, rgba(252,249,22,0.9363095580028886) 61%);
-  height:8vh;
-  position:relative;
-  transform: translate(0%, -3%);
+.nav-bar {
+  background: #FFC244;
+  height: 7.5em;
+  position: fixed;
+  z-index: 2;
+  width:100vw
 }
 
-.footer{
-  background: rgb(244,240,26);
-  background: linear-gradient(315deg, rgba(244,240,26,0.8382703423166141) 42%, rgba(232,245,12,0.8718837876947654) 47%, rgba(224,236,11,0.9475140397956058) 49%, rgba(216,230,26,1) 51%, rgba(220,224,42,0.8158613787311799) 54%, rgba(220,236,18,1) 57%, rgba(252,249,22,0.9363095580028886) 61%);
+.button.has-shadow {
+  box-shadow: 3px 3px 5px 0 rgba(0,0,0,.1);
+}
+
+.profile-toggle-btn{
+background:#2ABB9B
+}
+
+
+.nav-i {
+  width: 17vw;
+  padding: 0.5em;
+  margin:10px;
+  border-radius:100px
+}
+
+.footer {
+  background: #FFC244;
   height: 7vh;
-  position:static;
-  margin-bottom:0px;
+  position: static;
+  margin-bottom: 0px;
+}
+
+.classy-h2 {
+  font-family: 'Spartan', sans-serif;
+  font-size: 64px;
+  text-decoration: none;
+  color: #2ABB9B;
+
 }
 
 
-.classy-h2{
-  font-family: 'pacifico';
-  text-align:center;
-  font-size:64px;
-  position:absolute;
-  right:50%;
-  transform: translate(50%, 35%);
-  text-decoration:none;
-  color:black;
-
-}
-
-.classy-h2:hover{
-color: rgb(107,226,19);
-
-}
 
 .profile-lanp {
-  color: white;
-  font-size: 50px;
-  font-family: 'pacifico';
-  position: absolute;
-  transform: translate(271%, 36%);
+  color: black;
+  font-size: 45px;
+  font-family: 'Spartan', sans-serif;
   z-index: 2;
-  right: 63%;
-}
+  position: fixed;
+  right: 3em;
 
-.profile-lanp:hover{
-  color:yellow
-}
-
-.circle-container{
-position:relative;
-height:85vh;
-overflow:hidden
 
 }
 
-.circle-helix {
-  position:absolute;
-  border:solid yellow 8px;
-  background-color: none;
-  left: 50%;
-  bottom: 50%;
-  transform: translate(-50%, 50%);
-  height: 700px;
-  width: 700px;
-  border-radius: 50%;
-   
+.profile-lanp:hover {
+  color: #2ABB9B
 }
 
-.circle-signup {
-  position: absolute;
-  left: 50%;
-  bottom: 50%;
-  transform: translate(-50%, 50%);
-  height: 350px;
-  width: 350px;
-  border-radius: 50%;
-  background: rgb(107,226,19);
-  background: linear-gradient(42deg, rgba(107,226,19,0.9587185215883228) 42%, rgba(90,188,22,1) 47%, rgba(105,226,25,1) 49%, rgba(100,225,36,1) 51%, rgba(97,224,42,0.8158613787311799) 54%, rgba(106,236,18,1) 57%, rgba(95,224,46,1) 61%, rgba(23,255,0,1) 100%);
-  box-shadow: 10px 10px 68px 46px rgba(242,232,39,0.84);
+@media (min-width: 500px) and (max-width: 1000px) {
+  
+  .nav-list{
+    transform: translate(79vw, 0vh); 
+    font-size: 20px
+  }
 
+  .ddm-list{
+    border:none;
+     background-color:transparent
+  }
+  
+  .circle-helix {
+    position: absolute;
+    border: solid #F8BA3A 8px;
+    background-color: none;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+    height: 700px;
+    width: 700px;
+    border-radius: 50%;
+
+  }
+
+  .circle-container {
+    position: relative;
+    height: 93vh;
+    overflow: hidden
+  }
+
+
+  .circle-signup {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    box-shadow: 10px 10px 68px 46px #F8BA3A; 
+
+  }
+
+  .circle-user {
+    position: absolute;
+    left: 21%;
+    bottom: 63%;
+    transform: translate(-50%, 50%);
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+    background-color: #2ABB9B
+  }
+
+  .p-new {
+    color:#2ABB9B;
+    font-family: 'Spartan', sans-serif;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: 50px;
+  }
+
+  .p-SU {
+    font-family: 'Spartan', sans-serif;
+    position: absolute;
+    bottom: 30%;
+    transform: translate(42%);
+    font-size: 45px;
+    text-decoration: none !important;
+    color: black;
+  }
+
+
+  .p-login {
+    font-family: 'Spartan', sans-serif;
+    position: absolute;
+    transform: translate(38%, 144%);
+    text-decoration: none !important;
+    color: white;
+    font-size: 40px;
+  }
+
+  .teachers-list{
+    text-align: center;
+    position: relative;
+    transform: translate(0%, 70vh);
+    margin: 0 5.5em !important
+  }
 }
 
-.circle-user {
-  position: absolute;
-  left: 21%;
-  bottom: 63%;
-  transform: translate(-50%, 50%);
-  height: 220px;
-  width: 220px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 51);
-}
+@media (min-width: 1100px) {
 
-.circle-teacher {
-  position: absolute;
-  right: 0%;
-  bottom: 37%;
-  transform: translate(-50%, 50%);
-  height: 220px;
-  width: 220px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 51);
-}
+  .nav-list{
+    transform: translate(-10vw, 0vh); 
+    font-size: 20px
+  }
 
-.p-new {
-  font-family:'pacifico';
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%,50%);
-  font-size: 50px;
-}
+  .ddm-list{
+    border:none;
+    background-color:white
+  }
+  
+  .circle-helix {
+    position: absolute;
+    border: solid #F8BA3A 8px;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+    height: 450px;
+    width: 450px;
+    border-radius: 50%;
 
-.p-SU {
-  font-family:'pacifico';
-  position: absolute;
-  bottom: 30%;
-  transform: translate(38%,-24%);
-  font-size: 56px;
-  text-decoration: underline;
-  color: yellow;
-}
+  }
+
+  .circle-container {
+    position: relative;
+    height: 93vh;
+    overflow: hidden
+  }
 
 
-.p-login {
-  font-family:'pacifico';
-  position: absolute;
-  bottom: 10%;
-  transform: translate(-1%,-38%);
-  font-size: 31px;
-  text-align: center;
-  text-decoration:none;
-  color: rgb(107,186,19);
-  font-size:35px;
+  .circle-signup {
+    color:#2ABB9B;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    box-shadow: 10px 10px 68px 46px #F8BA3A; 
+
+  }
+
+  .circle-user {
+    position: absolute;
+    left: 21%;
+    bottom: 63%;
+    transform: translate(-50%, 50%);
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+    background-color: #2ABB9B;
+  }
+
+  .p-new {
+    font-family: 'Spartan', sans-serif;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: 40px;
+  }
+
+  .p-SU {
+    font-family: 'Jost', sans-serif;;
+    position: absolute;
+    bottom: 30%;
+    transform: translate(66%);
+    font-size: 30px;
+    text-decoration: underline;
+    color: black;
+    text-decoration: none !important;
+  }
+
+
+  .p-login {
+    font-family: 'Spartan', sans-serif;
+    position: absolute;
+    bottom: 10%;
+    transform: translate(64%, -130%);
+    text-decoration: none !important;
+    color: white;
+    font-size: 31px;
+} 
+  }
+
+  .teachers-list{
+    position: relative;
+    transform: translate(0vh, 28vh);
 }
+
+
+
+
+
+
 
 .view {
-  margin:0;
+  margin: 0;
   background-image: url(../images/Doisneau-kids.jpg);
   background-size: cover;
   height: 100vh;
@@ -166,7 +276,7 @@ overflow:hidden
 }
 
 .layer {
-  margin:0;
+  margin: 0;
   background-color: rgba(111, 67, 131, 0.901);
   height: 100%;
   width: 100%;
@@ -195,69 +305,70 @@ overflow:hidden
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
 
-.feedback{
-  position:relative;
-  line-height:1.7
+.feedback {
+  position: relative;
+  line-height: 1.7
 }
 
 .rating {
-  float:left;
+  float: left;
 }
 
 /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
   follow these rules. Every browser that supports :checked also supports :not(), so
   it doesn’t make the test unnecessarily selective */
-.rating:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
-    clip:rect(0,0,0,0);
+.rating:not(:checked)>input {
+  position: absolute;
+  top: -9999px;
+  clip: rect(0, 0, 0, 0);
 }
 
-.rating:not(:checked) > label {
-    float:right;
-    width:1em;
-    /* padding:0 .1em; */
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:300%;
-    /* line-height:1.2; */
-    color:#ddd;
+.rating:not(:checked)>label {
+  float: right;
+  width: 1em;
+  /* padding:0 .1em; */
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 300%;
+  /* line-height:1.2; */
+  color: #ddd;
 }
 
-.rating:not(:checked) > label:before {
-    content: '★ ';
+.rating:not(:checked)>label:before {
+  content: '★ ';
 }
 
-.rating > input:checked ~ label {
-    color: dodgerblue;
-    
+.rating>input:checked~label {
+  color: dodgerblue;
+
 }
 
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
-    color: dodgerblue;
-    
+.rating:not(:checked)>label:hover,
+.rating:not(:checked)>label:hover~label {
+  color: dodgerblue;
+
 }
 
-.rating > input:checked + label:hover,
-.rating > input:checked + label:hover ~ label,
-.rating > input:checked ~ label:hover,
-.rating > input:checked ~ label:hover ~ label,
-.rating > label:hover ~ input:checked ~ label {
-    color: dodgerblue;
-    
+.rating>input:checked+label:hover,
+.rating>input:checked+label:hover~label,
+.rating>input:checked~label:hover,
+.rating>input:checked~label:hover~label,
+.rating>label:hover~input:checked~label {
+  color: dodgerblue;
+
 }
 
-.rating > label:active {
-    position:relative;
-    top:2px;
-    left:2px;
+.rating>label:active {
+  position: relative;
+  top: 2px;
+  left: 2px;
 }
 
 /* .signup{
@@ -268,7 +379,8 @@ overflow:hidden
 /* user-interface styles*/
 
 .userInt-nav {
-  background-color:  rgb(107,226,19);;
+  background-color: rgb(107, 226, 19);
+  ;
   position: static;
   align-items: center;
   height: 7vh;
@@ -283,12 +395,12 @@ overflow:hidden
   font-size: 45px;
   padding: 5px;
   margin-right: 15px;
-  font-family:'pacifico'
+  font-family: 'pacifico'
 }
 
-.home-a:hover{
+.home-a:hover {
   text-decoration: none;
-  color:black
+  color: black
 }
 
 .back-btn {
@@ -301,13 +413,14 @@ overflow:hidden
   padding: 25px;
 }
 
-.back-btn:hover{
+.back-btn:hover {
   text-decoration: none;
-  color:black
+  color: black
 }
+
 .full-class {
   background-color: yellow;
- min-height: 50vh;
+  min-height: 50vh;
   margin-top: 50%;
   margin-right: 10%;
   display: flex;
@@ -316,7 +429,7 @@ overflow:hidden
   align-items: center;
   justify-content: center;
   border-radius: 15px;
-  line-height:2.1;
+  line-height: 2.1;
 }
 
 .h2-interface {
@@ -324,23 +437,23 @@ overflow:hidden
   font-size: 43px;
   padding: 15px;
   text-decoration: underline;
-  color: rgb(107,186,19);
+  color: rgb(107, 186, 19);
   font-weight: bold;
 }
 
-.p-interface{
+.p-interface {
   font-family: 'pacifico';
 }
 
-.teacher-interface{
+.teacher-interface {
   font-family: 'pacifico';
-  font-size:43px;
+  font-size: 43px;
 
 }
 
-.student-interface{
+.student-interface {
   font-family: 'pacifico';
-  
+
 }
 
 .edit-button {
@@ -348,7 +461,7 @@ overflow:hidden
   border-radius: 15px;
   padding: 10px;
   font-size: 25px;
-  color:black
+  color: black
 }
 
 .delete-btn {
@@ -358,27 +471,27 @@ overflow:hidden
   border-radius: 15px;
   padding: 0 15px 0 15px;
   font-size: 25px;
-  background: rgb(107,186,19);
+  background: rgb(107, 186, 19);
   font-weight: bold;
   border: solid 2px green;
 }
 
 
-.details-btn{
-color:green;
-font-weight:bold;
-font-size:40px;
+.details-btn {
+  color: green;
+  font-weight: bold;
+  font-size: 40px;
 }
 
-.new-class-parent{
-  position:relative
+.new-class-parent {
+  position: relative
 }
 
 .newClass-a {
   font-family: 'pacifico';
   font-size: 43px;
   padding: 15px;
-  color: rgb(107,186,19);
+  color: rgb(107, 186, 19);
   font-weight: bold;
   position: absolute;
   top: 20%;
@@ -397,31 +510,30 @@ font-size:40px;
   z-index: 2;
 }
 
-.fa-plus-circle{
+.fa-plus-circle {
   content: "\f055";
   color: green;
   z-index: 2;
-  font-size:40px;
- 
+  font-size: 40px;
+
 }
 
 
-.logOut-btn{
+.logOut-btn {
   font-family: 'pacifico';
   font-size: 43px;
   padding: 15px;
   text-decoration: underline;
-  color: rgb(107,186,19);
+  color: rgb(107, 186, 19);
   font-weight: bold;
 }
 
 /* edit classes styles*/
 
-.div-edit-form{
-  height:100vh;
-  position:relative;
-  background-color:rgb(244,240,26)
-
+.div-edit-form {
+  height: 100vh;
+  position: relative;
+  background-color: rgb(244, 240, 26)
 }
 
 .details-form {
@@ -434,27 +546,28 @@ font-size:40px;
   font-family: 'pacifico';
 }
 
-.form-label{
+.form-label {
   position: relative;
-  transform: translate(50%,22px);
-}
-.form-label-name{
-    position: relative;
-    transform: translate(296%, 17%);
-    right: 64%;
+  transform: translate(50%, 22px);
 }
 
-.edit-form-btn-lg{
-  background-color: rgb(107,186,19);
+.form-label-name {
+  position: relative;
+  transform: translate(296%, 17%);
+  right: 64%;
+}
+
+.edit-form-btn-lg {
+  background-color: rgb(107, 186, 19);
   border-style: none;
   border-radius: 10px;
   text-align: center;
-  font-family:'Red Hat Text';
-  line-height:2.5;
-  width:173%
+  font-family: 'Red Hat Text';
+  line-height: 2.5;
+  width: 173%
 }
 
-.form-label-h2{
+.form-label-h2 {
   text-align: center;
   padding: 15%;
   font-family: 'pacifico';
@@ -462,13 +575,13 @@ font-size:40px;
   text-decoration: underline;
 }
 
-.edit-form-btn{
-  background-color: rgb(107,186,19);
+.edit-form-btn {
+  background-color: rgb(107, 186, 19);
   border-style: none;
   border-radius: 10px;
   text-align: center;
-  font-family:'Red Hat Text';
-  line-height:2.5
+  font-family: 'Red Hat Text';
+  line-height: 2.5
 }
 
 .edit-class-btn {
@@ -492,32 +605,33 @@ hr {
   padding: 5px;
   margin-right: 15px;
   font-family: 'pacifico';
-  position:relative;
-  left:65%
+  position: relative;
+  left: 65%
 }
 
-.back-to-profile:hover{
-  color:green;
-  text-decoration:none
+.back-to-profile:hover {
+  color: green;
+  text-decoration: none
 }
 
 
 /*error message class*/
 
-.errorMessage{
+.errorMessage {
   margin-top: 2em;
   font-size: 2em;
   color: rgb(124, 41, 41);
   font-weight: bold;
   text-align: center;
 }
+
 /* sign-up/log-in styles */
-.signup{
+.signup {
   min-height: 100vh;
-  background-color: rgb(244,240,26);
+  background-color: rgb(244, 240, 26);
 }
 
-.signup > h2{
+.signup>h2 {
   font-family: 'Pacifico';
   font-size: 4em;
   text-align: center;
@@ -526,25 +640,25 @@ hr {
 }
 
 .signupFields {
-  background-color: rgb(107,186,19);
+  background-color: rgb(107, 186, 19);
   border-style: none;
   font-size: 2em;
   border-radius: 10px;
   text-align: center;
-  font-family:'Red Hat Text';
+  font-family: 'Red Hat Text';
   height: 3em;
   width: 15em;
   margin-bottom: 4em;
 }
 
-.signup > form{
+.signup>form {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 4em;
 }
 
-.btn{
+.btn {
   font-size: 2em;
   border-radius: 10px;
   height: 2em;
@@ -554,40 +668,42 @@ hr {
   font-weight: bold;
 }
 
-.bTeacher{
+.bTeacher {
   font-size: 2.5em;
   font-family: 'Pacifico';
 }
 
-.tick{
+.tick {
   margin-bottom: 4em;
   margin-top: 2em;
   height: 2em;
   width: 2em;
 }
 
-.signup > p{
+.signup>p {
   margin-top: 2em;
   font-size: 2em;
   color: rgb(124, 41, 41);
   font-weight: bold;
   text-align: center;
 }
+
 /* END of sign-up/log-in styles */
 
 /* create class styles */
 .fields {
-  background-color: rgb(107,186,19);
+  background-color: rgb(107, 186, 19);
   border-style: none;
   border-radius: 10px;
   text-align: center;
-  font-family:'Red Hat Text';
+  font-family: 'Red Hat Text';
   font-size: 2em;
   height: 3em;
   width: 15em;
   margin-bottom: 3em;
 }
-.btnCreate{
+
+.btnCreate {
   font-size: 1em;
   border-radius: 10px;
   min-height: 2.7em;
@@ -599,12 +715,12 @@ hr {
   padding: 10px 5px;
 }
 
-.labelCreate{
+.labelCreate {
   font-family: 'Pacifico';
   font-size: 2.5em;
 }
 
-.signup select{
+.signup select {
   font-size: 1.2em;
   border-radius: 10px;
   color: black;
@@ -612,37 +728,41 @@ hr {
   min-width: 4em;
   font-size: 30px;
   margin-bottom: 1.5em;
-  text-align-last:center;
+  text-align-last: center;
   font-weight: 600;
 }
+
 /* END of create class styles */
 /* class-details styles */
-.signup h1{
+.signup h1 {
   font-family: 'Pacifico';
   font-size: 4em;
   text-align: center;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
 }
-.classDetailsLabel{
+
+.classDetailsLabel {
   font-family: 'Pacifico';
   font-size: 2.5em;
   text-align: center;
 }
 
-.rating{
+.rating {
   margin: 1.5em 0;
 }
 
-.feedback_rating{
+.feedback_rating {
   display: flex;
   flex-direction: column;
   font-size: 2em;
   margin: 0 3em;
-  }
-.feedback_rating p{
+}
+
+.feedback_rating p {
   font-family: 'Pacifico';
-  }
+}
+
 /* END of class-details styles */
 
 /* necesita quedarse al fondo del css */
@@ -650,6 +770,11 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    transition: all 5000s ease-in-out 0s;
-    transition-property: background-color, color;
+  transition: all 5000s ease-in-out 0s;
+  transition-property: background-color, color;
+}
+/* profile picture */
+
+.profile-pic{
+  width:7.5em
 }

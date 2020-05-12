@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const moment = require('moment')
-const multer = require('multer');
-const upload = multer({ dest: './public/uploads/' });
 const uploadCloud = require('../../config/cloudinary.js');
+
+const bcrypt = require('bcrypt');
+const bcryptSalt = 10;
 
 const User = require('../../models/user');
 const Class = require('../../models/class');
-const Picture = require('../../models/picture');
+
 
 router.use((req, res, next) => {
   if (req.session.currentUser) {
@@ -15,7 +16,7 @@ router.use((req, res, next) => {
     return;
   }
 
-  res.redirect('/auth/login');
+  res.render('login');
 });
 
 
@@ -43,10 +44,15 @@ router.get('/classy', (req, res, next) => {
       //change the view of the dates
       classes.forEach(date => {
         date.classDate2 = moment(date.classDate).format('ddd Do MMMM YYYY');
-       // console.log(classes)
-      })
-     
-      res.render('user-interface.hbs', { classes, isTeacher: req.session.currentUser.isTeacher });
+        // console.log(classes)
+
+      });
+
+      User.findById(req.session.currentUser).then(data => actualSessionPhoto = data.imgPath);
+
+      req.session.reload((err) => {
+          res.render('user-interface', { actualSessionPhoto, classes, isTeacher: req.session.currentUser.isTeacher});
+      });
     });
 });
 
@@ -60,6 +66,7 @@ router.get('/teachers', (req, res, next) => {
         { _id: { $ne: req.session.currentUser._id } }
       ]
     },
+
     (err, teachersList) => {
       if (err) {
         next(err);
@@ -75,9 +82,10 @@ router.get('/teachers', (req, res, next) => {
 router.post('/teachers', (req, res, next) => {
   const userId = req.session.currentUser._id;
   const teacherInfo = {
-    fee: req.body.fee,
+    classPrice: req.body.classPrice,
     isTeacher: true
   };
+
 
   User.findByIdAndUpdate(userId, teacherInfo, { new: true }, (err, oneUser) => {
     if (err) {
@@ -93,16 +101,17 @@ router.post('/teachers', (req, res, next) => {
 
 
 router.get('/teachers/:id', (req, res, next) => {
-  const teacherId = req.params.id;
-  User.findById(teacherId, (err, oneUser) => {
+  const teacher = req.params.id;
+
+  User.findById(teacher, (err, oneUser) => {
     if (err) {
       next(err);
       return;
     }
-    res.render('user-profile', {
-      theTeacher: oneUser
-    });
-  });
+    res.render('teacher-info', {
+      teacher: oneUser
+    })
+  })
 });
 
 
@@ -110,7 +119,10 @@ router.post('/class-book', (req, res, next) => {
   const classInfo = {
     classDate: req.body.classDate,
     teacher: req.body.teacherId,
-    user: req.session.currentUser._id
+    student: req.session.currentUser._id,
+    time: req.body.time,
+    description: req.body.description,
+    name: req.body.name,
   };
   const theClass = new Class(classInfo);
   theClass.save((err) => {
@@ -145,22 +157,22 @@ router.post('/create-class', (req, res, next) => {
   let { name, description, classDate, time, student } = req.body;
   const teacher = req.session.currentUser._id
   //console.log(student)
-    if (name === '' || description === '' || classDate === ''|| time === '') {
-      User.find({ isTeacher: false },
-        (err, users) => {
-          if (err) {
-            next(err);
-            return;
-          }
-          //console.log(users)
-          res.render('create-class.hbs', {
-            users,
-            errorMessage: 'Please fill all the fields to create a new class!'
-          });
+  if (name === '' || description === '' || classDate === '' || time === '') {
+    User.find({ isTeacher: false },
+      (err, users) => {
+        if (err) {
+          next(err);
+          return;
         }
-      );
-      return;
-    }
+        //console.log(users)
+        res.render('create-class.hbs', {
+          users,
+          errorMessage: 'Please fill all the fields to create a new class!'
+        });
+      }
+    );
+    return;
+  }
   Class.create({ name, description, classDate, time, teacher, student })
     .then(data => {
       res.redirect('/classy/classy')
@@ -216,7 +228,7 @@ router.post('/feedback/:_id', (req, res, next) => {
     { $push: { feedback: { user, feedback, rating } } }
   )
     .then(clase => {
-     // console.log(clase)
+      // console.log(clase)
       // console.log("rating is", rating)
       res.redirect(`/classy/${_id}/class-details`);
     })
@@ -253,42 +265,24 @@ router.get('/profile', (req, res, next) => {
 });
 
 
-router.post('/edit/profile', (req, res, next) => {
-  const { name } = req.body;
-
-  User.findOneAndUpdate({ _id: req.session.currentUser }, { name })
-    .then(data => {
-      res.redirect('/classy/classy')
-    })
-
-
-});
-
-//////////////// upload-picture
-
-//// cloudinary
-
-router.get('/photo/add', (req, res, next) => {
-
-    res.render('profile.hbs');
-
-  })
-
-router.post('/photo/add', uploadCloud.single('photo'), (req, res, next) => {
-  const { title, description } = req.body;
+router.post('/profile/edit-profile', uploadCloud.single('photo'), async (req, res, next) => {
+  const { name, password } = req.body;
   const imgPath = req.file.url;
   const imgName = req.file.originalname;
+  const salt = bcrypt.genSaltSync(bcryptSalt);
+  const hashPass = bcrypt.hashSync(password, salt);
 
-  Picture.create({ title, description, imgPath, imgName })
-    .then(photo => {
-      res.redirect('/classy/profile');
-        console.log(photo.imgPath)
-    })
-    .catch(error => {
-      console.log(error);
-    });
-});
+  try {
 
+
+    await User.findOneAndUpdate({ _id: req.session.currentUser }, { name, password: hashPass, imgName, imgPath })
+    res.redirect('/classy/classy')
+
+
+  } catch (error) {
+    res.status(404)
+  }
+})
 
 
 module.exports = router

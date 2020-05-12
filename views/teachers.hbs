@@ -3,7 +3,7 @@
     {{#each teachers}}
     <li>
         <h3> {{ this.name }} </h3>
-        <p> Fee: ${{ this.fee }} </p>
+        <p> Fee: {{ this.classPrice }}$ </p>
         <a href="/classy/teachers/{{ this._id }}">
             Schedule a Class
         </a>

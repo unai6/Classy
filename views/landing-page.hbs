@@ -1,16 +1,52 @@
-<div class='viewport-100'>
-<nav class='nav-bar'> 
-    <h2><a class='classy-h2' href='/'>Classy</a></h2>
-</nav>
-    <a class='profile-lanp' href='/classy/classy'>profile  <i class="fas fa-user-plus"></i><a>
+<div class='viewport-100 '>
+    {{!-- <nav class='nav-bar nav-bar col-lg-12 d-sm-flex justify-content-center align-items-center'>
+        <a class='profile-lanp mr-5' href='/classy/classy'><i class="fas fa-user-plus"></i><a>
+    </nav> --}}
 
-<div class='circle-container'>
+    <nav class="mb-1 navbar navbar-expand-lg nav-bar">
+        <a class="navbar-brand classy-h2" href="/home">Classy</a>
+        <button class="navbar-toggler profile-lanp ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <a class=' mr-5'></a><i class="fas fa-user-plus "></i><a></a>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent-4">
+            <ul class="navbar-nav ml-auto nav-list">
+                <li class="nav-item nav-i active bg-light button has-shadow">
+                    <a class="nav-link" href="#">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item nav-i bg-light button has-shadow">
+                      <a class='nav-link' style='color:black' href='/classy/teachers'><i class="fas fa-user-tie"></i>   Check all teachers</a>
+                </li>
+                <li class="nav-item nav-i dropdown profile-toggle-btn button has-shadow">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i> Profile </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-info ddm-list"
+                        aria-labelledby="navbarDropdownMenuLink-4">
+                        <a class="dropdown-item ddm-list" href="/classy/classy"><b>My account</b></a>
+                        <a class="dropdown-item ddm-list" href='/auth/logout'>Log out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class='circle-helix'></div>
-    <div class='circle-signup'><p class='p-new'>New?</p> <br> <p><a class='p-SU' href='/auth/signup'>Sign Up</a></p></div>
-    <div class='circle-user'> <p> <a class='p-login' href='/auth/login'>Login as a Student</a></p></div>
-    <div class='circle-teacher'><p> <a class='p-login' href='/auth/login'>Login as a teacher </a></p></div>
-</div>
-<footer class='footer'> 
-</footer>
+
+
+    <div class='circle-container'>
+
+        <div class='circle-helix'></div>
+        <div class='circle-signup'>
+            <p class='p-new'>New?</p> <br>
+            <p><a class='p-SU' href='/auth/signup'>Sign Up</a></p>
+        </div>
+        <div class='circle-user'>
+            <p> <a class='p-login' href='/auth/login'> <b>Login</b></a></p>
+        </div>
+    </div>
+    <footer class='footer'></footer>
 </div>

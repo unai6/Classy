@@ -2,31 +2,21 @@
    <a class='back-btn' href="/classy/classy">Back to profile</a>
 
 
-<h2>Upload a new photo</h2>
-<form action="/classy/photo/add" method="post" enctype="multipart/form-data">
-    <label>Title</label>
-    <input type="text" name="title">
-
-    <label>Description</label>
-    <input type="text" name="description">
-
-    <label>Poster</label>
-    <input type="file" name="photo">
-
-    <input type="submit" value="SAVE">
-</form>
+<h1>Profile</h1>
     <div>
-    <img src="{{photo.imgPath}}" alt='photo'>
+    <img class='profile-pic img-fluid rounded mx-auto d-block' src="{{imgPath}}" alt='photo'>
     </div>
 
-<h1>Profile</h1>
-
-    <form action="/classy/edit/profile" method='post'>
+    <form action="/classy/profile/edit-profile" method='post' enctype="multipart/form-data">
+    <input class='btn w-100' type="file" name="photo"/>
 
       <label class="classDetailsLabel">Name</label>
       <input class="fields" type='text' name='name' value='{{name}}'>
        <label class="classDetailsLabel">New Password</label>
-      <input class="fields" type='password' name='password' value=''>
+      <input class="fields" type='password' name='password' placeholder='...'>
       <button class="btnCreate" type='submit'>Save</button>
     </form>
 </div>
+{{#if errorMessage}}
+<p> {{errorMessage}}</p>
+{{/if}}

@@ -1,0 +1,34 @@
+
+    <div>
+        <p>{{teacher.name}}</p>
+        <p>{{teacher.email}}</p>
+
+    </div>
+        
+        
+<h3>
+    Schedule a Class With
+    <i> {{ teacher.name }} </i>
+</h3>
+
+<form action="/classy/class-book" method="post">
+    <div>
+        <label for="pickup-date-input">
+            When would you like to schedule a class?
+        </label>
+        <input type="date" name="classDate" >
+        <input type="time" name="time">
+        <input type="text" name="description" placeholder=' class description'>
+        <input type="text" name="name" placeholder =' class name'>
+
+    </div>
+  
+    <input type="hidden" name="teacherId" value="{{ teacher._id }}">
+
+    <button> Schedule This Class </button>
+</form>
+
+
+<a href="/classy/teachers">
+    Find Another Teacher
+</a>

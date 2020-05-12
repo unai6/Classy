@@ -6,15 +6,16 @@ const userSchema = new Schema({
 
   name: String,
   email: String,
-  password: {type: String, require: true, unique: true},
-  isTeacher: {type: Boolean, default: false},
-  classPrice: {type: Number, default: null},
-  photo: [{type:Schema.Types.ObjectId, ref:'Picture'}]
-}, 
+  password: { type: String, require: true, unique: true },
+  isTeacher: { type: Boolean, default: false },
+  classPrice: { type: Number, default: null },
+  imgName: String,
+  imgPath: {type: String, default :'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1024px-User_icon_2.svg.png' }
+},
 
-{
-  timestamps: true
-})
+  {
+    timestamps: true
+  })
 
 User = mongoose.model("User", userSchema);
 

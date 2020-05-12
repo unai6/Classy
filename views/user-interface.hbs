@@ -1,71 +1,75 @@
 <!-- Teacher and student interface (TSI) -->
 <div class="bg">
-<nav class='userInt-nav'>
-     <a class='back-btn' href="javascript:history.back()">Back</a>
-    <a class='home-a' href='/home'>Home</a>
-</nav>
+    <nav class='userInt-nav'>
+        <a class='back-btn' href="javascript:history.back()">Back</a>
+        <a class='home-a' href='/home'>Home</a>
+    </nav>
 
-      
-<img src='{{photo}}' alt='photo'>
+    <div>
+    <img class='profile-pic-UI img-fluid rounded mx-auto d-block' src="{{actualSessionPhoto}}"alt='photo'>
+    </div>
 
 
-{{#if isTeacher}}
-<div class= 'new-class-parent'>
-<a class='new-class-btn'><i class="fas fa-plus-circle"></i></a>
-<a class='newClass-a' href='/classy/create-class'> New class</a>
-</div>
-{{/if}}
+    {{#if isTeacher}}
+    <div class='new-class-parent'>
+        <a class='new-class-btn'><i class="fas fa-plus-circle"></i></a>
+        <a class='newClass-a' href='/classy/create-class'> New class</a>
+    </div>
+    {{/if}}
 
-<div class='full-class'>
+    <div class='full-class'>
 
-    <h2 class='h2-interface'>YOUR CLASSES</h2>
- 
-<!--Teacher interface-->
+        <h2 class='h2-interface'>YOUR CLASSES</h2>
 
-    <div class='teacher-interface'>
-    {{#if isTeacher }}
-        {{#each classes}}
+        <!--Teacher interface-->
 
-         {{this.classDate2}}<br>
-         {{this.time}} 
-            - 
-         {{this.name}} 
+        <div class='teacher-interface'>
+            {{#if isTeacher }}
+            {{#each classes}}
+        
+            {{this.classDate2}}<br>
+            {{this.time}}
             -
-         {{this.student.0.name}} <a class='details-btn' href='/classy/{{this._id}}/class-details'><i class="fas fa-search-plus"></i></a> - <a class='edit-button' href='/classy/{{this._id}}/edit'>EDIT</a>
-         <form action ='/classy/{{this._id}}/delete' method='POST'>  
-        <button class='delete-btn' type ='submit'>DELETE</button>
-        </form>
-        <hr> 
-    {{/each}} 
+            {{this.name}}
+            -
+            {{this.description}}
+            -
+            {{this.student.0.name}} <a class='details-btn' href='/classy/{{this._id}}/class-details'><i
+                    class="fas fa-search-plus"></i></a> - <a class='edit-button'
+                href='/classy/{{this._id}}/edit'>EDIT</a>
+            <form action='/classy/{{this._id}}/delete' method='POST'>
+                <button class='delete-btn' type='submit'>DELETE</button>
+            </form>
+            <hr>
+            {{/each}}
 
-     <a class='logOut-btn' href='/classy/profile'>Edit profile</a> <br>
-    <a class='logOut-btn' href='/auth/logout'>Log out</a>
+            <a class='logOut-btn' href='/classy/profile'>Edit profile</a> <br>
+            <a class='logOut-btn' href='/auth/logout'>Log out</a>
+        </div>
+        {{/if}}
+
+        <!-- Student interface -->
+        {{#unless isTeacher}}
+        <div class='student interface'>
+            {{#each classes}}
+
+            {{this.classDate2}}<br>
+            {{this.time}}
+            {{this.name}}
+            -
+            {{this.teacher.name}}
+            -
+            {{this.description}}<a class='details-btn' href='/classy/{{this._id}}/class-details'> <i
+                    class="fas fa-search-plus"></i></a>
+            <hr>
+
+            {{/each}}
+            <br>
+            <a class='logOut-btn' href='/classy/profile'>Edit profile</a><br>
+            <a class='logOut-btn' href='/auth/logout'>Log out</a>
+
+        </div>
+        {{/unless}}
     </div>
-{{/if}}
-
-<!-- Student interface -->
-    {{#unless isTeacher}}
-    <div class='student interface'>
-    {{#each classes}}
-
-    {{this.classDate2}}<br>
-    {{this.time}}
-    {{this.name}} 
-       -
-    {{this.description}}<a class='details-btn' href='/classy/{{this._id}}/class-details'> <i class="fas fa-search-plus"></i></a>
-    <hr>
-
-    {{/each}}
-    <br>
-     <a class='logOut-btn' href='/classy/profile'>Edit profile</a><br>
-     <a class='logOut-btn' href='/auth/logout'>Log out</a> 
-
-    </div>
-    {{/unless}}
-</div>
 
 </div>
-
-
-
-    

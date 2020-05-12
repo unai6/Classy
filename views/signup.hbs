@@ -1,29 +1,48 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <div class="signup">
-     <a class='back-btn' href="javascript:history.back()">Back</a>
+    <a class='back-btn' href="javascript:history.back()">Back</a>
 
     <h2><u>Create an account</u></h2>
 
-<div class='errorMessage'>
-    {{#if errorMessage}}
-    {{errorMessage}}
-    {{/if}}
-</div>
+    <div class='errorMessage'>
+        {{#if errorMessage}}
+        {{errorMessage}}
+        {{/if}}
+    </div>
 
-<form action='/auth/signup' method='post' novalidate>
+    <form action='/auth/signup' method='post' novalidate>
 
-{{!-- <label for='username'>Name </label> --}}
-<input class="signupFields" type='text' name='name' placeholder='Name' required='required'>
+        {{!-- <label for='username'>Name </label> --}}
+        <input class="signupFields" type='text' name='name' placeholder='Name' required='required'>
 
-{{!-- <label for='email'>Email</label> --}}
-<input class="signupFields" type='email' name='email' placeholder='Email @' required='required'>
+        {{!-- <label for='email'>Email</label> --}}
+        <input class="signupFields" type='email' name='email' placeholder='Email @' required='required'>
 
-{{!-- <label for='password'>Password </label> --}}
-<input class="signupFields" type='password' name='password' placeholder='Password' required= 'required'>
+        {{!-- <label for='password'>Password </label> --}}
+        <input class="signupFields" type='password' name='password' placeholder='Password' required='required'>
 
-<label class="bTeacher"for='isTeacher'>Want to become a teacher?</label>
-<input class="tick" type='checkbox' name ='isTeacher'>
+        <script type="text/javascript">
+            $(function () {
+                $("#beaTeacher").click(function () {
+                    if ($(this).is(":checked")) {
+                        $("#teacherBox").show();
+                    } else {
+                        $("#teacherBox").hide();
+                    }
+                });
+            });
+        </script>
+        <label class="bTeacher" for="beaTeacher">
+            Want to become a teacher?
 
-<button class="btn"type='submit'>Sign Up</button>
+        </label>
+        <input type="checkbox" id="beaTeacher" name='isTeacher' style=" height: 1.5em; width: 2.5em; margin-bottom: 1.5em;" />
+        <div id="teacherBox" style="display: none">
+            <input class="signupFields" type='number' name='classPrice' placeholder='Class Price €' required='required'/>
+        </div>
 
-</form>
-</div>
+
+        <button class="btn" type='submit'>Sign Up</button>
+
+
+    </form>
