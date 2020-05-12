@@ -55,7 +55,7 @@ var authRouter = require('./routes/auth/auth.js');
 var classyRouter = require('./routes/classy/classy.js')
 
 app.use(session({
-  secret: 'never do your own laundry again',
+  secret: 'check your classes wherever you are',
   resave: true,
   saveUninitialized: true,
   cookie: { maxAge: 6000000 },
