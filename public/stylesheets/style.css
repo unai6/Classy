@@ -80,7 +80,7 @@ body {
 
   .nav-list {
     transform: translate(62vw, 0vh);
-    font-size: 25px
+    font-size: 35px
   }
 
   .nav-i {
@@ -92,7 +92,8 @@ body {
 
   .ddm-list {
     border: none;
-    background-color: transparent
+    background-color: transparent;
+    font-size:1em
   }
 
   .classy-h2 {
@@ -427,8 +428,7 @@ body {
 /* user-interface styles*/
 
 .userInt-nav {
-  background-color: rgb(107, 226, 19);
-  ;
+  background-color: #2ABB9B;
   position: static;
   align-items: center;
   height: 7vh;
@@ -467,7 +467,7 @@ body {
 }
 
 .full-class {
-  background-color: yellow;
+  background-color: #FFC244;
   min-height: 50vh;
   margin-top: 50%;
   margin-right: 10%;
@@ -485,7 +485,7 @@ body {
   font-size: 43px;
   padding: 15px;
   text-decoration: underline;
-  color: rgb(107, 186, 19);
+  color: #2ABB9B;
   font-weight: bold;
 }
 
@@ -505,7 +505,7 @@ body {
 }
 
 .edit-button {
-  border: solid 4px green;
+  border: solid 4px #2ABB9B;
   border-radius: 15px;
   padding: 10px;
   font-size: 25px;
@@ -519,14 +519,14 @@ body {
   border-radius: 15px;
   padding: 0 15px 0 15px;
   font-size: 25px;
-  background: rgb(107, 186, 19);
+  background: #2ABB9B;
   font-weight: bold;
-  border: solid 2px green;
+  border: solid 2px #2ABB9B;
 }
 
 
 .details-btn {
-  color: green;
+  color: #2ABB9B;
   font-weight: bold;
   font-size: 40px;
 }
@@ -539,12 +539,12 @@ body {
   font-family: 'pacifico';
   font-size: 43px;
   padding: 15px;
-  color: rgb(107, 186, 19);
+  color: #2ABB9B;
   font-weight: bold;
   position: absolute;
   top: 20%;
   transform: translate(266%, 256%);
-  border: solid 5px green;
+  border: solid 5px #2ABB9B;
   border-radius: 15px;
   z-index: 1;
 }
@@ -560,7 +560,7 @@ body {
 
 .fa-plus-circle {
   content: "\f055";
-  color: green;
+  color: #2ABB9B;
   z-index: 2;
   font-size: 40px;
 
@@ -572,7 +572,7 @@ body {
   font-size: 43px;
   padding: 15px;
   text-decoration: underline;
-  color: rgb(107, 186, 19);
+  color: #2ABB9B;
   font-weight: bold;
 }
 
@@ -581,7 +581,7 @@ body {
 .div-edit-form {
   height: 100vh;
   position: relative;
-  background-color: rgb(244, 240, 26)
+  background-color: #FFC244
 }
 
 .details-form {
@@ -606,7 +606,7 @@ body {
 }
 
 .edit-form-btn-lg {
-  background-color: rgb(107, 186, 19);
+  background-color: #2ABB9B;
   border-style: none;
   border-radius: 10px;
   text-align: center;
@@ -624,7 +624,7 @@ body {
 }
 
 .edit-form-btn {
-  background-color: rgb(107, 186, 19);
+  background-color: #2ABB9B;
   border-style: none;
   border-radius: 10px;
   text-align: center;
@@ -640,7 +640,7 @@ body {
 }
 
 hr {
-  color: green;
+  color: #2ABB9B;
   border: solid 1px;
 }
 
@@ -658,7 +658,7 @@ hr {
 }
 
 .back-to-profile:hover {
-  color: green;
+  color: #2ABB9B;
   text-decoration: none
 }
 
@@ -676,7 +676,7 @@ hr {
 /* sign-up/log-in styles */
 .signup {
   min-height: 100vh;
-  background-color: rgb(244, 240, 26);
+  background-color: white
 }
 
 .signup>h2 {
@@ -688,7 +688,7 @@ hr {
 }
 
 .signupFields {
-  background-color: rgb(107, 186, 19);
+  background-color: #2ABB9B;
   border-style: none;
   font-size: 2em;
   border-radius: 10px;
@@ -740,7 +740,7 @@ hr {
 
 /* create class styles */
 .fields {
-  background-color: rgb(107, 186, 19);
+  background-color: #2ABB9B;
   border-style: none;
   border-radius: 10px;
   text-align: center;
