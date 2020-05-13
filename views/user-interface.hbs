@@ -24,6 +24,7 @@
 
         <div class='teacher-interface'>
             {{#if isTeacher }}
+        
             {{#each classes}}
         
             {{this.classDate2}}<br>
@@ -34,7 +35,7 @@
             {{this.description}}
             -
             {{this.student.0.name}} <a class='details-btn' href='/classy/{{this._id}}/class-details'><i
-                    class="fas fa-search-plus"></i></a>  <a class='edit-button' href='/classy/{{this._id}}/edit'>EDIT</a>
+                    class="fas fa-search-plus"></i></a> - <a class='edit-button' href='/classy/{{this._id}}/edit'>EDIT</a>
             <form action='/classy/{{this._id}}/delete' method='POST'>
                 <button class='delete-btn' type='submit'>DELETE</button>
             </form>

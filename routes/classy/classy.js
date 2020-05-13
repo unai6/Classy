@@ -224,6 +224,7 @@ router.post('/feedback/:_id', (req, res, next) => {
   const { rating, feedback } = req.body;
   const user = req.session.currentUser.name;
   const { _id } = req.params;
+  
   Class.findByIdAndUpdate(_id,
     { $push: { feedback: { user, feedback, rating } } }
   )
@@ -266,7 +267,7 @@ router.get('/profile', (req, res, next) => {
 
 
 router.post('/profile/edit-profile', uploadCloud.single('photo'), async (req, res, next) => {
-  const { name, password } = req.body;
+  const { name, password, classPrice } = req.body;
   const imgPath = req.file.url;
   const imgName = req.file.originalname;
   const salt = bcrypt.genSaltSync(bcryptSalt);
@@ -275,7 +276,7 @@ router.post('/profile/edit-profile', uploadCloud.single('photo'), async (req, re
   try {
 
 
-    await User.findOneAndUpdate({ _id: req.session.currentUser }, { name, password: hashPass, imgName, imgPath })
+    await User.findOneAndUpdate({ _id: req.session.currentUser }, { name, password: hashPass, classPrice, imgName, imgPath })
     res.redirect('/classy/classy')
 
 

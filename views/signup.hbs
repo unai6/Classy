@@ -2,7 +2,7 @@
 <div class="signup">
     <a class='back-btn' href="/home">Home</a>
 
-    <h2><u>Create an account</u></h2>
+    <h2 class='signup-h2-lg'><u>Create an account</u></h2>
 
     <div class='errorMessage'>
         {{#if errorMessage}}
@@ -10,7 +10,7 @@
         {{/if}}
     </div>
 
-    <form action='/auth/signup' method='post' novalidate>
+    <form class='form-lg' action='/auth/signup' method='post' novalidate>
 
         {{!-- <label for='username'>Name </label> --}}
         <input class="signupFields" type='text' name='name' placeholder='Name' required='required'>
@@ -31,18 +31,23 @@
                     }
                 });
             });
-        </script>
-        <label class="bTeacher" for="beaTeacher">
-            Want to become a teacher?
 
+        </script>
+        <label class="bTeacher">
+            Want to become a teacher?
         </label>
-        <input type="checkbox" id="beaTeacher" name='isTeacher' style=" height: 1.5em; width: 2.5em; margin-bottom: 1.5em;" />
+        <div class="round">
+            <input class='checkBoxTeacher' type="checkbox" id="beaTeacher" name='isTeacher' />
+            <label for="beaTeacher"></label>
+        </div>
+
         <div id="teacherBox" style="display: none">
-            <input class="signupFields" type='number' name='classPrice' placeholder='Class Price €' required='required'/>
+            <input class="signupFields" type='number' name='classPrice' placeholder='Class Price €'
+                required='required' />
         </div>
 
 
-        <button class="btn" type='submit'>Sign Up</button>
+        <button class="btn btn-warning" type='submit'>Sign Up</button>
 
 
     </form>

@@ -1,8 +1,8 @@
 <div class="signup">
      <a class='back-btn' href="/home">Back</a>
 
-    <h2><u>Log in</u></h2>
-<form action='/auth/login' method='post' autocomplete='on'>
+    <h2 class='signup-h2-lg'><u>Log in</u></h2>
+<form class='form-lg' style='margin-top:2em' action='/auth/login' method='post' autocomplete='on'>
 
 {{!-- <label for='email'>Email </label> --}}
 <input class="signupFields" type='email' name='email' placeholder='Email @' required='required'>
@@ -10,11 +10,11 @@
 {{!-- <label for='password'>Password </label> --}}
 <input class="signupFields" type='password' name='password' placeholder='Password' required='required'>
 
-<button class="btn" type='submit'>Login</button>
+<button class="btn btn-warning" type='submit'>Login</button>
 
 </form>
 
-
+</div>
 {{#if errorMessage}}
 <p> {{errorMessage}}</p>
 {{/if}}

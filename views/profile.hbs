@@ -6,14 +6,16 @@
     <div>
     <img class='profile-pic img-fluid rounded mx-auto d-block' src="{{imgPath}}" alt='photo'>
     </div>
-
+      
     <form action="/classy/profile/edit-profile" method='post' enctype="multipart/form-data">
     <input class='btn w-100' type="file" name="photo"/>
 
       <label class="classDetailsLabel">Name</label>
-      <input class="fields" type='text' name='name' value='{{name}}'>
+      <input class="fields" type='text' name='name'placeholder='New Name' value='{{name}}'>
        <label class="classDetailsLabel">New Password</label>
-      <input class="fields" type='password' name='password' placeholder='...'>
+      <input class="fields" type='password' name='password' placeholder='Set a new password'>
+      <label class="classDetailsLabel">Set a new Price</label>
+      <input class="fields" type='number' name='classPrice' placeholder='New Price €' min='0' value='{{classPrice}}'/>
       <button class="btnCreate" type='submit'>Save</button>
     </form>
 </div>

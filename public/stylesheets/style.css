@@ -19,10 +19,215 @@ body {
 
 }
 
+.new_footer_area {
+  background: #fbfbfd;
+}
+
+
+.new_footer_top {
+  padding: 120px 0px 270px;
+  position: relative;
+    overflow-x: hidden;
+}
+.new_footer_area .footer_bottom {
+  padding-top: 5px;
+  padding-bottom: 50px;
+}
+.footer_bottom {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  color: #7f88a6;
+  padding: 27px 0px;
+}
+.new_footer_top .company_widget p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #6a7695;
+  margin-bottom: 20px;
+}
+.new_footer_top .company_widget .f_subscribe_two .btn_get {
+  border-width: 1px;
+  margin-top: 20px;
+}
+.btn_get_two:hover {
+  background: transparent;
+  color: #FFC244;
+}
+.btn_get:hover {
+  color: #fff;
+  background: #6754e2;
+  border-color: #6754e2;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+
+
+.new_footer_top .f_widget.about-widget .f_list li a:hover {
+  color: #FFC244;
+}
+.new_footer_top .f_widget.about-widget .f_list li {
+  margin-bottom: 11px;
+}
+.f_widget.about-widget .f_list li:last-child {
+  margin-bottom: 0px;
+}
+.f_widget.about-widget .f_list li {
+  margin-bottom: 15px;
+}
+.f_widget.about-widget .f_list {
+  margin-bottom: 0px;
+}
+.new_footer_top .f_social_icon a {
+  width: 44px;
+  height: 44px;
+  line-height: 43px;
+  background: transparent;
+  border: 1px solid #e2e2eb;
+  font-size: 24px;
+}
+.f_social_icon a {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: 14px;
+  line-height: 45px;
+  color: #858da8;
+  display: inline-block;
+  background: #ebeef5;
+  text-align: center;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.ti-facebook:before {
+  content: "\e741";
+}
+.ti-twitter-alt:before {
+  content: "\e74b";
+}
+.ti-vimeo-alt:before {
+  content: "\e74a";
+}
+.ti-pinterest:before {
+  content: "\e731";
+}
+
+.btn_get_two {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: #FFC244;
+  border-color: #FFC244;
+  color: #fff;
+}
+
+.btn_get_two:hover {
+  background: transparent;
+  color: #FFC244;
+}
+
+.new_footer_top .f_social_icon a:hover {
+  background: #FFC244;
+  border-color: #FFC244;
+  color:white;
+}
+.new_footer_top .f_social_icon a + a {
+  margin-left: 4px;
+}
+.new_footer_top .f-title {
+  margin-bottom: 30px;
+  color: #263b5e;
+}
+.f_600 {
+  font-weight: 600;
+}
+.f_size_18 {
+  font-size: 18px;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #4b505e;
+}
+.new_footer_top .f_widget.about-widget .f_list li a {
+  color: #6a7695;
+}
+
+
+.new_footer_top .footer_bg {
+  position: absolute;
+  bottom: 0;
+  background: url("https://decoracion-madera.com/wp-content/uploads/2015/02/skyline-barcelona-00.png") no-repeat scroll center 0;
+  background-size:cover;  
+  width: 100%;
+  height: 266px;
+}
+
+.new_footer_top .footer_bg .footer_bg_one {
+  background: url("https://1.bp.blogspot.com/-mvKUJFGEc-k/XclCOUSvCnI/AAAAAAAAUAE/jnBSf6Fe5_8tjjlKrunLBXwceSNvPcp3wCLcBGAsYHQ/s1600/volks.gif") no-repeat center center;
+  width: 330px;
+  height: 105px;
+background-size:100%;
+  position: absolute;
+  bottom: -21px;
+  left: 30%;
+  -webkit-animation: myfirst 22s linear infinite;
+  animation: myfirst 22s linear infinite;
+}
+
+.new_footer_top .footer_bg .footer_bg_two {
+  background: url("https://1.bp.blogspot.com/-hjgfxUW1o1g/Xck--XOdlxI/AAAAAAAAT_4/JWYFJl83usgRFMvRfoKkSDGd--_Sv04UQCLcBGAsYHQ/s1600/cyclist.gif") no-repeat center center;
+  width: 88px;
+  height: 100px;
+background-size:100%;
+  bottom: 0;
+  left: 38%;
+  position: absolute;
+  -webkit-animation: myfirst 30s linear infinite;
+  animation: myfirst 30s linear infinite;
+}
+
+
+
+@-moz-keyframes myfirst {
+0% {
+  left: -25%;
+}
+100% {
+  left: 100%;
+}
+}
+
+@-webkit-keyframes myfirst {
+0% {
+  left: -25%;
+}
+100% {
+  left: 100%;
+}
+}
+
+@keyframes myfirst {
+0% {
+  left: -25%;
+}
+100% {
+  left: 100%;
+}
+}
+
+/*************footer End*****************/
+
+
+
 .nav-bar {
   background: #FFC244;
   height: 7.5em;
-  position: fixed;
+  position: static;
   z-index: 2;
   width: 100vw
 }
@@ -69,8 +274,7 @@ body {
   .nav-bar {
     background: #FFC244;
     height: 7.5em;
-    position: fixed;
-    z-index: 2;
+    position:fixed ;
     width: 100vw;
     border-bottom-left-radius: 50% 100%;
     border-bottom-right-radius: 50% 100%;
@@ -93,7 +297,7 @@ body {
   .ddm-list {
     border: none;
     background-color: transparent;
-    font-size:1em
+    font-size: 1em
   }
 
   .classy-h2 {
@@ -101,7 +305,6 @@ body {
     font-size: 64px;
     text-decoration: none;
     color: #2ABB9B;
-    position: relative;
     transform: translate(35vw, 12vh);
   }
 
@@ -109,12 +312,12 @@ body {
     font-size: 32px;
     position: relative;
     transform: translate(-.5vw, -3vh);
-}
+  }
+
   .profile-lanp {
     color: black;
     font-size: 45px;
     font-family: 'Spartan', sans-serif;
-    z-index: 2;
     position: fixed;
     right: 10em;
   }
@@ -179,7 +382,7 @@ body {
     transform: translate(42%);
     font-size: 45px;
     text-decoration: none !important;
-    color: black;
+    color: #303030;
   }
 
 
@@ -207,6 +410,89 @@ body {
     border-top-left-radius: 50% 100%;
     border-top-right-radius: 50% 100%;
   }
+
+  .back-btn {
+    text-decoration: none;
+    color: black;
+    font-size: 45px;
+    padding: 5px;
+    margin-right: 15px;
+    font-family: 'Spartan', sans-serif;
+    padding: 25px;
+  }
+
+  .signupFields {
+    background-color: #2ABB9B;
+    border-style: none;
+    font-size: 2em;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Red Hat Text';
+    height: 3em;
+    width: 15em;
+    margin-bottom: 4em;
+  }
+
+  .checkBoxTeacher {
+    height: 2.5em;
+    width: 2.5em;
+    margin-bottom: 1.5em;
+
+  }
+
+  .round {
+    position: relative;
+  }
+
+  .round label {
+    background-color: #fff;
+    border: 2.5px solid #2ABB9B;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 28px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 28px;
+  }
+
+  .round label:after {
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 7px;
+    opacity: 0;
+    position: absolute;
+    top: 8px;
+    transform: rotate(-45deg);
+    width: 12px;
+  }
+
+  .round input[type="checkbox"] {
+    visibility: hidden;
+  }
+
+  .round input[type="checkbox"]:checked+label {
+    background-color: #66bb6a;
+    border-color: #66bb6a;
+  }
+
+  .round input[type="checkbox"]:checked+label:after {
+    opacity: 1;
+  }
+
+  .btn {
+    font-size: 2.5em;
+    border-radius: 10px;
+    height: 2em;
+    width: 6em;
+    padding-bottom: 2em;
+    font-weight: bold;
+    margin-top: 1em;
+  }
+
 }
 
 @media (min-width: 1100px) {
@@ -232,7 +518,7 @@ body {
     position: absolute;
     border: solid #F8BA3A 8px;
     left: 50%;
-    bottom: 50%;
+    bottom: 45%;
     transform: translate(-50%, 50%);
     height: 450px;
     width: 450px;
@@ -251,7 +537,7 @@ body {
     color: #2ABB9B;
     position: absolute;
     left: 50%;
-    bottom: 50%;
+    bottom: 45%;
     transform: translate(-50%, 50%);
     height: 250px;
     width: 250px;
@@ -288,7 +574,7 @@ body {
     transform: translate(66%);
     font-size: 30px;
     text-decoration: underline;
-    color: black;
+    color: #303030;
     text-decoration: none !important;
   }
 
@@ -302,17 +588,97 @@ body {
     color: white;
     font-size: 31px;
   }
+
+  .form-lg {
+    padding: 0 !important;
+    padding-bottom: 1.5em !important;
+  }
+
+  .signup-h2-lg {
+    font-size: 3em !important;
+    padding: 0 !important;
+  }
+
+  .back-btn {
+    font-family: 'Spartan', sans-serif;
+    font-size: 1.5em !important;
+    margin: 2em !important;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+  }
+
+  .signupFields {
+    background-color: #2ABB9B;
+    border-style: none;
+    font-size: 1.5em;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Red Hat Text';
+    height: 2em;
+    width: 12em;
+    margin-bottom: 2em;
+  }
+
+  .round {
+    position: relative;
+  }
+
+  .round label {
+    background-color: #fff;
+    border: 1.5px solid #2ABB9B;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 28px;
+    left: 0;
+    position: absolute;
+    top: -.5em;
+    width: 28px;
+  }
+
+  .round label:after {
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 7px;
+    opacity: 0;
+    position: absolute;
+    top: 8px;
+    transform: rotate(-45deg);
+    width: 12px;
+  }
+
+  .round input[type="checkbox"] {
+    visibility: hidden;
+  }
+
+  .round input[type="checkbox"]:checked+label {
+    background-color: #66bb6a;
+    border-color: #66bb6a;
+  }
+
+  .round input[type="checkbox"]:checked+label:after {
+    opacity: 1;
+  }
+
+  .btn {
+    font-size: 1.2em;
+    border-radius: 10px;
+    height: 2em;
+    width: 6em;
+    padding-bottom: 2em;
+    font-weight: bold;
+    margin-top: 1em;
+  }
+
 }
 
 .teachers-list {
   position: relative;
   transform: translate(0vh, 28vh);
 }
-
-
-
-
-
 
 
 .view {
@@ -326,7 +692,7 @@ body {
 
 .layer {
   margin: 0;
-  background-color: rgba(111, 67, 131, 0.901);
+  background-color: #2ABB9B;
   height: 100%;
   width: 100%;
   background-size: cover;
@@ -334,7 +700,7 @@ body {
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  /* border: 30px solid rgb(105, 75, 47); */
+  border: 30px solid black
 }
 
 .mainTitle {
@@ -343,7 +709,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 9em;
-  font-family: "Pacifico";
+  font-family: 'Spartan', sans-serif;
   color: rgba(0, 0, 0, 0.85);
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
@@ -443,7 +809,7 @@ body {
   font-size: 45px;
   padding: 5px;
   margin-right: 15px;
-  font-family: 'pacifico'
+  font-family: 'Spartan', sans-serif;
 }
 
 .home-a:hover {
@@ -451,15 +817,7 @@ body {
   color: black
 }
 
-.back-btn {
-  text-decoration: none;
-  color: black;
-  font-size: 45px;
-  padding: 5px;
-  margin-right: 15px;
-  font-family: 'pacifico';
-  padding: 25px;
-}
+
 
 .back-btn:hover {
   text-decoration: none;
@@ -481,7 +839,9 @@ body {
 }
 
 .h2-interface {
-  font-family: 'pacifico';
+
+  font-family: 'Spartan', sans-serif;
+  ;
   font-size: 43px;
   padding: 15px;
   text-decoration: underline;
@@ -490,17 +850,23 @@ body {
 }
 
 .p-interface {
-  font-family: 'pacifico';
+
+  font-family: 'Spartan', sans-serif;
+  ;
 }
 
 .teacher-interface {
-  font-family: 'pacifico';
+
+  font-family: 'Spartan', sans-serif;
+  ;
   font-size: 43px;
 
 }
 
 .student-interface {
-  font-family: 'pacifico';
+
+  font-family: 'Spartan', sans-serif;
+  ;
 
 }
 
@@ -536,7 +902,9 @@ body {
 }
 
 .newClass-a {
-  font-family: 'pacifico';
+
+  font-family: 'Spartan', sans-serif;
+  ;
   font-size: 43px;
   padding: 15px;
   color: #2ABB9B;
@@ -568,7 +936,9 @@ body {
 
 
 .logOut-btn {
-  font-family: 'pacifico';
+
+  font-family: 'Spartan', sans-serif;
+  ;
   font-size: 43px;
   padding: 15px;
   text-decoration: underline;
@@ -591,7 +961,9 @@ body {
   bottom: 50%;
   font-size: 50px;
   line-height: 2.5;
-  font-family: 'pacifico';
+
+  font-family: 'Spartan', sans-serif;
+  ;
 }
 
 .form-label {
@@ -618,7 +990,9 @@ body {
 .form-label-h2 {
   text-align: center;
   padding: 15%;
-  font-family: 'pacifico';
+
+  font-family: 'Spartan', sans-serif;
+  ;
   font-size: 4em;
   text-decoration: underline;
 }
@@ -652,7 +1026,9 @@ hr {
   font-size: 45px;
   padding: 5px;
   margin-right: 15px;
-  font-family: 'pacifico';
+
+  font-family: 'Spartan', sans-serif;
+  ;
   position: relative;
   left: 65%
 }
@@ -667,7 +1043,7 @@ hr {
 
 .errorMessage {
   margin-top: 2em;
-  font-size: 2em;
+  font-size: 1em;
   color: rgb(124, 41, 41);
   font-weight: bold;
   text-align: center;
@@ -680,24 +1056,16 @@ hr {
 }
 
 .signup>h2 {
-  font-family: 'Pacifico';
+
+  font-family: 'Spartan', sans-serif;
+  ;
   font-size: 4em;
   text-align: center;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
 }
 
-.signupFields {
-  background-color: #2ABB9B;
-  border-style: none;
-  font-size: 2em;
-  border-radius: 10px;
-  text-align: center;
-  font-family: 'Red Hat Text';
-  height: 3em;
-  width: 15em;
-  margin-bottom: 4em;
-}
+
 
 .signup>form {
   display: flex;
@@ -706,19 +1074,10 @@ hr {
   padding-top: 4em;
 }
 
-.btn {
-  font-size: 2em;
-  border-radius: 10px;
-  height: 2em;
-  width: 5em;
-  font-size: 30px;
-  padding-bottom: 2em;
-  font-weight: bold;
-}
-
 .bTeacher {
-  font-size: 2.5em;
-  font-family: 'Pacifico';
+  font-size: 1.9em;
+  font-family: 'Spartan', sans-serif;
+  ;
 }
 
 .tick {
@@ -764,7 +1123,9 @@ hr {
 }
 
 .labelCreate {
-  font-family: 'Pacifico';
+
+  font-family: 'Spartan', sans-serif;
+  ;
   font-size: 2.5em;
 }
 
@@ -783,7 +1144,9 @@ hr {
 /* END of create class styles */
 /* class-details styles */
 .signup h1 {
-  font-family: 'Pacifico';
+
+  font-family: 'Spartan', sans-serif;
+  ;
   font-size: 4em;
   text-align: center;
   padding-top: 1.5em;
@@ -791,7 +1154,9 @@ hr {
 }
 
 .classDetailsLabel {
-  font-family: 'Pacifico';
+
+  font-family: 'Spartan', sans-serif;
+  ;
   font-size: 2.5em;
   text-align: center;
 }
@@ -808,7 +1173,9 @@ hr {
 }
 
 .feedback_rating p {
-  font-family: 'Pacifico';
+
+  font-family: 'Spartan', sans-serif;
+  ;
 }
 
 /* END of class-details styles */
