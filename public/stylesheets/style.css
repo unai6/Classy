@@ -27,7 +27,7 @@ body {
 .new_footer_top {
   padding: 120px 0px 270px;
   position: relative;
-    overflow-x: hidden;
+  overflow: hidden;
 }
 .new_footer_area .footer_bottom {
   padding-top: 5px;
