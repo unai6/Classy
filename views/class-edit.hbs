@@ -1,22 +1,37 @@
-
+{{!-- 
 <div class='div-edit-form'>
      <a class='back-btn' href="javascript:history.back()">Back</a>
 
 <h2 class='form-label-h2'>Edit Class</h2>
 <form class='details-form' action="/classy/{{classEdit.id}}" method="post">
-<label class='form-label-name' for="name">Name</label>
-<input class='edit-form-btn-lg' type="text" name="name" value="{{classEdit.name}}" id="">
-<br />
-<label class='form-label' for="occupation">Description</label>
-<input class='edit-form-btn-lg' type="text" name="description" value="{{classEdit.description}}" id="">
-<label  class='form-label' for="classDate">Class Date</label>
-<input class='edit-form-btn' type="date" name="classDate" value="{{classEdit.classDate}}" id="">
+
+
+<input class="signupFields" type="date" name="classDate" value="{{classEdit.classDate}}" id="">
 <label  class='form-label' for="time">Class Time</label>
-<input class='edit-form-btn' type="time" name="time" value="{{classEdit.time}}" id="">
 <br />
 
 <br />
 <button class='edit-class-btn' type="submit">Edit Class</button>
+</form>
+
+</div> --}}
+
+<div class="signup" style='background: #FFC244'>
+     <a class='back-btn' href="/home">Back</a>
+
+    <h2 class='signup-h2-lg'><u>Edit class</u></h2>
+<form class='form-lg' style='margin-top:2em' action='/auth/login' method='post' autocomplete='on'>
+<label class='form-label' for="name">Name</label>
+<input class="signupFields" type="text" name="name" value="{{classEdit.name}}" id="">
+<label class='form-label' >Description</label>
+<input class="signupFields" type="text" name="description" value="{{classEdit.description}}" id="">
+<label  class='form-label' for="classDate">Class Date</label>
+<input class="signupFields" type="date" name="classDate" value="{{classEdit.classDate}}" id="">
+<label class='form-label'>Class Time</label>
+<input class="signupFields" type="time" name="time" value="{{classEdit.time}}" id="">
+
+<button class="edit-button " type='submit'>Edit</button>
+
 </form>
 
 </div>

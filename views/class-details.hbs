@@ -1,6 +1,6 @@
 <div class="signup">
-   <a class='back-to-profile' href="/classy/classy">Back to Profile</a>
-  <h1>How was your class?</h1>
+   <a class='back-btn' href="/classy/classy">Back to Profile</a>
+  <h1 class='signup-h2-lg'>How was your class?</h1>
 
   <form action="/classy/feedback/{{classId.id}}" method='post'>
     {{!-- <fieldset> --}}
@@ -18,9 +18,9 @@
       <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
     </div>
     <label class="classDetailsLabel">Feedback</label><br>
-    <textarea class="fields" type="text" name="feedback" rows="3" cols="40" value='{{classId.feedback}}'></textarea>
+    <textarea class="signupFields"  type="text" name="feedback" rows="3" cols="40" value='{{classId.feedback}}'></textarea>
     {{!-- </fieldset> --}}
-    <button class="btnCreate" type='submit'>Save</button>
+    <button class="btn btn-warning" type='submit'>Save</button>
   </form>
   <section class="feedback_rating">
     <hr>
@@ -32,7 +32,7 @@
        <b>Rating:</b> {{rating}} <br>
        <hr>
         <form action ='/classy/class/{{../classId._id}}/feedback/{{_id}}/delete' method='POST'>  
-        <button class='delete-btn' type ='submit'>DELETE</button>
+        <button class='delete-btn' type ='submit' style='margin-bottom:2em'>DELETE</button>
         </form>
 
       {{/each}}

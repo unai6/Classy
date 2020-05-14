@@ -425,6 +425,16 @@ background-size:100%;
     padding: 25px;
   }
 
+  .home-a {
+
+    text-decoration: none;
+    color: black;
+    font-size: 45px;
+    padding: 5px;
+    margin-right: 15px;
+    font-family: 'Spartan', sans-serif;
+  }
+
   .signupFields {
     background-color: #2ABB9B;
     border-style: none;
@@ -498,6 +508,147 @@ background-size:100%;
     margin-bottom:1em
   }
 
+  .newClass-a {
+    font-family: 'Spartan', sans-serif;
+    font-size: 2em;
+    padding: 5px;
+    color: #2ABB9B;
+    font-weight: bold;
+    position: absolute;
+    top: 2vh;
+    right: 20vw;
+    transform: translate(50%, 50%);
+    border: solid 5px #2ABB9B;
+    border-radius: 15px;
+    z-index: 1;
+}
+  
+
+.new-class-btn {
+  font-size: 93px;
+  position: absolute;
+  transform: translate(50%, 70%);
+  bottom: 0vh;
+  right: 30vw;
+  z-index: 2;
+}
+  .fa-plus-circle {
+    content: "\f055";
+    color: #2ABB9B;
+    z-index: 2;
+    font-size: 40px;
+  
+  }
+
+  .profile-pic-UI{
+    border-radius: 50%;
+    margin-top: 3em;
+    width: 12.5em;
+    height:13.5em;
+  }
+
+  .full-class {
+    background-color: #FFC244;
+    height: 54vh;
+    margin-top: 16vh;
+    margin-right: 10%;
+    display: flex;
+    margin-left: 10%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    line-height: 2.1;
+  }
+
+  .teacher-interface {
+
+    font-family: 'Spartan', sans-serif;
+    font-size: 2em;  
+  }
+
+  .h2-interface {
+
+    font-family: 'Spartan', sans-serif;
+    ;
+    font-size: 43px;
+    padding: 15px;
+    text-decoration: underline;
+    color: #2ABB9B;
+    font-weight: bold;
+  }
+  .details-btn {
+    color: #2ABB9B;
+    font-weight: bold;
+    font-size: 40px;
+  }
+
+
+  .delete-btn {
+    position: relative;
+    transform: translate(-134%, -20%);
+    left: 60%;
+    border-radius: 15px;
+    padding: 0 15px 0 15px;
+    font-size: 25px;
+    background: #2ABB9B;
+    font-weight: bold;
+    border: solid 2px #2ABB9B;
+  }
+
+  
+.logOut-btn {
+
+  font-family: 'Spartan', sans-serif;
+  ;
+  font-size: 43px;
+  padding: 15px;
+  text-decoration: underline;
+  color: #2ABB9B;
+  font-weight: bold;
+  }
+
+  .details-form {
+    position: absolute;
+    width: 30%;
+    transform: translate(87%, 55%);
+    bottom: 50%;
+    font-size: 50px;
+    line-height: 2.5;
+  
+    font-family: 'Spartan', sans-serif;
+    ;
+  }
+
+  .div-edit-form {
+    height: 100vh;
+    position: relative;
+    background-color: #FFC244
+  }
+
+  .edit-button {
+    border: solid 4px #2ABB9B;
+    border-radius: 15px;
+    padding: 0em 1.5em 0 1.5em;
+    font-size: 2em;
+    margin-bottom:2em
+  }
+
+  .edit-btn2 {
+    border: solid 4px #2ABB9B;
+    border-radius: 10px;
+    padding: 0em 1.5em 0 1.5em;
+    font-size: .9em;
+    margin-bottom: 2em;
+    color: black;
+}
+
+  .form-label {
+    position: relative;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
 }
 
 @media (min-width: 1100px) {
@@ -677,7 +828,143 @@ background-size:100%;
     font-weight: bold;
     margin-top: 1em;
   }
+  .newClass-a {
+    font-family: 'Spartan', sans-serif;
+    font-size: 15px;
+    padding: 7px;
+    color: #2ABB9B;
+    font-weight: bold;
+    position: absolute;
+    top: 20%;
+    right: 34%;
+    transform: translate(60%, 50%);
+    border: solid 5px #2ABB9B;
+    border-radius: 15px;
+    z-index: 1;
+  }
 
+  
+  .new-class-btn {
+    font-size: 93px;
+    position: absolute;
+    transform: translate(-13%, 41%);
+    bottom: 0;
+    right: 36%;
+    z-index: 2;
+}
+  .fa-plus-circle {
+    content: "\f055";
+    color: #2ABB9B;
+    z-index: 2;
+    font-size: 20px;
+  
+  }
+  .profile-pic-UI{
+    border-radius: 50%;
+    margin-top: 3em;
+    width: 9.5em;
+    height:10.5em;
+  }
+
+  .full-class {
+    background-color: #FFC244;
+    margin-right: 20%;
+    margin-top: 6em;
+    display: flex;
+    margin-left: 20%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+ 
+  }
+  
+  .teacher-interface {
+
+    font-family: 'Spartan', sans-serif;
+    font-size: 1.2em;
+    margin-bottom:1em
+  
+  }
+
+  .h2-interface {
+
+    font-family: 'Spartan', sans-serif;
+    ;
+    font-size: 1.6em;
+    padding: 15px;
+    text-decoration: underline;
+    color: #2ABB9B;
+    font-weight: bold;
+  }
+
+  .home-a {
+
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+    padding: 5px;
+    margin-right: 15px;
+    font-family: 'Spartan', sans-serif;
+  }
+
+  .details-btn {
+    color: #2ABB9B;
+    font-weight: bold;
+    font-size: 1em;
+  }
+
+  .edit-button {
+    border: solid 4px #2ABB9B;
+    border-radius: 15px;
+    padding: 0em 2em 0em 2em;
+    font-size: 1em;
+    font-weight:bold;
+    color: black
+  }
+
+  .delete-btn {
+    position: relative;
+    transform: translate(-134%, 15%);
+    left: 60%;
+    border-radius: 15px;
+    padding: 0 5px 0 5px;
+    font-size: .7em;
+    background: #2ABB9B;
+    font-weight: bold;
+    border: solid 2px #2ABB9B;
+  }
+
+  
+.logOut-btn {
+
+  font-family: 'Spartan', sans-serif;
+  margin-bottom:.8em;
+  font-size: 1em;
+  padding: 5px;
+  text-decoration: underline;
+  color: #2ABB9B;
+  font-weight: bold;
+  }
+  .details-form {
+    width: 30%;
+    font-size: 50px;
+    line-height: 2.5;
+  
+    font-family: 'Spartan', sans-serif;
+    ;
+  }
+
+  .div-edit-form {
+    position: relative;
+    background-color: #FFC244
+  }
+
+  .form-label {
+    position: relative;
+    font-size: 1.3em;
+    font-weight: bold;
+  }
 }
 
 .teachers-list {
@@ -729,6 +1016,8 @@ background-size:100%;
   100% {
     opacity: 1;
   }
+
+  
 }
 
 .feedback {
@@ -807,15 +1096,6 @@ background-size:100%;
   justify-content: space-around;
 }
 
-.home-a {
-
-  text-decoration: none;
-  color: black;
-  font-size: 45px;
-  padding: 5px;
-  margin-right: 15px;
-  font-family: 'Spartan', sans-serif;
-}
 
 .home-a:hover {
   text-decoration: none;
@@ -829,30 +1109,7 @@ background-size:100%;
   color: black
 }
 
-.full-class {
-  background-color: #FFC244;
-  min-height: 50vh;
-  margin-top: 50%;
-  margin-right: 10%;
-  display: flex;
-  margin-left: 10%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 15px;
-  line-height: 2.1;
-}
 
-.h2-interface {
-
-  font-family: 'Spartan', sans-serif;
-  ;
-  font-size: 43px;
-  padding: 15px;
-  text-decoration: underline;
-  color: #2ABB9B;
-  font-weight: bold;
-}
 
 .p-interface {
 
@@ -860,13 +1117,6 @@ background-size:100%;
   ;
 }
 
-.teacher-interface {
-
-  font-family: 'Spartan', sans-serif;
-  ;
-  font-size: 43px;
-
-}
 
 .student-interface {
 
@@ -875,106 +1125,18 @@ background-size:100%;
 
 }
 
-.edit-button {
-  border: solid 4px #2ABB9B;
-  border-radius: 15px;
-  padding: 10px;
-  font-size: 25px;
-  color: black
-}
-
-.delete-btn {
-  position: relative;
-  transform: translate(-134%, -20%);
-  left: 60%;
-  border-radius: 15px;
-  padding: 0 15px 0 15px;
-  font-size: 25px;
-  background: #2ABB9B;
-  font-weight: bold;
-  border: solid 2px #2ABB9B;
-}
 
 
-.details-btn {
-  color: #2ABB9B;
-  font-weight: bold;
-  font-size: 40px;
-}
+
 
 .new-class-parent {
   position: relative
 }
 
-.newClass-a {
 
-  font-family: 'Spartan', sans-serif;
-  ;
-  font-size: 43px;
-  padding: 15px;
-  color: #2ABB9B;
-  font-weight: bold;
-  position: absolute;
-  top: 20%;
-  transform: translate(266%, 256%);
-  border: solid 5px #2ABB9B;
-  border-radius: 15px;
-  z-index: 1;
-}
-
-.new-class-btn {
-  font-size: 93px;
-  position: absolute;
-  transform: translate(390%, 122%);
-  top: 20%;
-  right: 55%;
-  z-index: 2;
-}
-
-.fa-plus-circle {
-  content: "\f055";
-  color: #2ABB9B;
-  z-index: 2;
-  font-size: 40px;
-
-}
-
-
-.logOut-btn {
-
-  font-family: 'Spartan', sans-serif;
-  ;
-  font-size: 43px;
-  padding: 15px;
-  text-decoration: underline;
-  color: #2ABB9B;
-  font-weight: bold;
-}
 
 /* edit classes styles*/
 
-.div-edit-form {
-  height: 100vh;
-  position: relative;
-  background-color: #FFC244
-}
-
-.details-form {
-  position: absolute;
-  width: 30%;
-  transform: translate(87%, 55%);
-  bottom: 50%;
-  font-size: 50px;
-  line-height: 2.5;
-
-  font-family: 'Spartan', sans-serif;
-  ;
-}
-
-.form-label {
-  position: relative;
-  transform: translate(50%, 22px);
-}
 
 .form-label-name {
   position: relative;
@@ -1012,10 +1174,10 @@ background-size:100%;
 }
 
 .edit-class-btn {
-  padding: 10px 20px;
   border-radius: 15px;
   position: relative;
   right: -37%;
+  font-size: .8em;
 }
 
 hr {
@@ -1197,5 +1359,9 @@ input:-webkit-autofill:active {
 /* profile picture */
 
 .profile-pic {
-  width: 7.5em
+  width: 12.5em;
+  height:13.5em;
+  border-radius: 50%;
+
 }
+

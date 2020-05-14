@@ -5,7 +5,7 @@
     </nav>
 
     <div>
-    <img class='profile-pic-UI img-fluid rounded mx-auto d-block' src="{{actualSessionPhoto}}"alt='photo'>
+    <img class='profile-pic-UI img-fluid  mx-auto d-block' src="{{actualSessionPhoto}}"alt='photo'>
     </div>
 
 
@@ -35,7 +35,7 @@
             {{this.description}}
             -
             {{this.student.0.name}} <a class='details-btn' href='/classy/{{this._id}}/class-details'><i
-                    class="fas fa-search-plus"></i></a> - <a class='edit-button' href='/classy/{{this._id}}/edit'>EDIT</a>
+                    class="fas fa-search-plus"></i></a> - <a class='edit-button edit-btn2' href='/classy/{{this._id}}/edit'>EDIT</a>
             <form action='/classy/{{this._id}}/delete' method='POST'>
                 <button class='delete-btn' type='submit'>DELETE</button>
             </form>

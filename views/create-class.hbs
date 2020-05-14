@@ -1,21 +1,19 @@
 <div class="signup">
     <a class='back-btn' href="/classy/classy">Back to profile</a>
 
-    <h2><u>When would you like to create your class?</u></h2>
+    <h2 class='signup-h2-lg'><u>When would you like to create your class?</u></h2>
     {{#if errorMessage}}
     <p> {{errorMessage}}</p>
     {{/if}}
     <form action="/classy/create-class" method="post">
-        <label class="labelCreate" for="class-date-input">Date</label for='date'>
-        <input class="fields" type="date" name="classDate">
-        <label class="labelCreate" for='time'>Time</label>
-        <input class="fields" type="time" name="time">
-        <label class="labelCreate" for='name'>Name</label>
-        <input class="fields" type='text' name='name'>
-        <label class="labelCreate" for='description'>Description</label>
-        <input class="fields" type='text' name='description'>
-
-        <label class="labelCreate" for='select'>Assign the Class to:</label>
+        <label class='form-label' for="class-date-input">Date</label for='date'>
+        <input class="signupFields" type="date" name="classDate">
+        <label class='form-label' for='   time'>Time</label>
+        <input class="signupFields" type="time" name="time">
+        <input class="signupFields" type='text' name='name' placeholder='Class name'>
+        <textarea  class="signupFields"  name="textarea" rows="10" cols="50" name='description' placeholder='Class description'></textarea>
+        {{!-- <input class="signupFields" type='text' name='description' placeholder='Class description'> --}}
+        <label class="signupFields" for='select'>Assign the Class to:</label>
 
 
         <select name='student'>
@@ -23,6 +21,6 @@
             <option class="studentOption" value={{_id}}>{{name}}</option>
             {{/each}}
         </select>
-        <button class="btnCreate" type='submit'> Create a Class! </button>
+        <button class="btn btn-warning" style='margin-bottom:2em' type='submit'> Create! </button>
     </form>
 </div>
