@@ -11,11 +11,9 @@
         <label class='form-label' for='   time'>Time</label>
         <input class="signupFields" type="time" name="time">
         <input class="signupFields" type='text' name='name' placeholder='Class name'>
-        <textarea  class="signupFields"  name="textarea" rows="10" cols="50" name='description' placeholder='Class description'></textarea>
-        {{!-- <input class="signupFields" type='text' name='description' placeholder='Class description'> --}}
-        <label class="signupFields" for='select'>Assign the Class to:</label>
-
-
+        <textarea  class="signupFields"  type= 'text' name="description" rows="10" cols="50" name='description' placeholder='Class description'></textarea>
+        
+        <label class="signupFields" for='select'>Assign the Class to</label>
         <select name='student'>
             {{#each users}}
             <option class="studentOption" value={{_id}}>{{name}}</option>

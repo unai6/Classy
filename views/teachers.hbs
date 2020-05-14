@@ -1,15 +1,31 @@
-<h2> Find a Teacher </h2>
-<ul>
-    {{#each teachers}}
-    <li>
-        <h3> {{ this.name }} </h3>
-        <p> Fee: {{ this.classPrice }}$ </p>
-        <a href="/classy/teachers/{{ this._id }}">
-            Schedule a Class
-        </a>
-    </li>
-    {{/each}}
-</ul>   
+<h2> Find the best teacher for you </h2>
+
+<div class="mx-auto col-lg-8 col-sm-8">
+    <ul style='list-style:none' class='card-deck'>
+        {{#each teachers}}
+        <li>
+            <div class="card" style="width: 25rem;">
+                <img class='profile-pic-UI img-fluid d-block bd-placeholder-img card-img-top mx-auto' src="{{imgPath}}" style='height:6em; width:5.5em' alt='photo'>
+
+                <div class="card-body">
+                    <h3> {{ this.name }} </h3>
+                    <h4>Can teach</h4>
+                    <h6>{{this.subject}}</h6>
+                    <p>{{ this.bio}} </p>
+                    <p> Class Price: {{ this.classPrice }}€ </p>
+                    <p> Phone Number - {{this.phoneNumber}}</p>
+
+                    <a href="/classy/teachers/{{ this._id }}">
+                        Schedule a Class
+                    </a>
+                </div>
+            </div>
+
+        </li>
+        {{/each}}
+    </ul>
+</div>
+
 <a href="/classy/classy">
     Back to Dashboard
 </a>

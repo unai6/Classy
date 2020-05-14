@@ -21,6 +21,9 @@
         {{!-- <label for='password'>Password </label> --}}
         <input class="signupFields" type='password' name='password' placeholder='Password' required='required'>
 
+        <input class="signupFields" type='text' name='phoneNumber' placeholder='Phone Number' required='required'>
+
+
         <script type="text/javascript">
             $(function () {
                 $("#beaTeacher").click(function () {
@@ -42,8 +45,15 @@
         </div>
 
         <div id="teacherBox" style="display: none">
-            <input class="signupFields" type='number' name='classPrice' placeholder='Class Price €'
-                required='required' />
+            <ul style='list-style:none'>
+                <li> <input class="signupFields" type='number' name='classPrice' placeholder='Class Price €'
+                        required='required' /></li>
+                <li><input class="signupFields" type='text' name='subject' placeholder='What can you teach?'
+                        required='required' /></li>
+                <li><label class='form-label' style='text-align:center' from='bio'>Write your Bio</label></li>
+                <li><textarea class="signupFields" type='text' name='bio'> </textarea></li>
+            </ul>
+
         </div>
 
 

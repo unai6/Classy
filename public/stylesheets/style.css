@@ -549,8 +549,9 @@ background-size:100%;
 
   .full-class {
     background-color: #FFC244;
-    height: 54vh;
+    min-height: 54vh;
     margin-top: 16vh;
+    margin-bottom:2em;
     margin-right: 10%;
     display: flex;
     margin-left: 10%;
@@ -673,7 +674,7 @@ background-size:100%;
   .circle-helix {
     position: absolute;
     border: solid #F8BA3A 8px;
-    left: 50%;
+    left: 47%;
     bottom: 45%;
     transform: translate(-50%, 50%);
     height: 450px;
@@ -685,14 +686,15 @@ background-size:100%;
   .circle-container {
     position: relative;
     height: 93vh;
-    overflow: hidden
-  }
-
+    overflow: hidden;
+    transform: translate(3vw, 1vh);
+    bottom: 18vh;
+}
 
   .circle-signup {
     color: #2ABB9B;
     position: absolute;
-    left: 50%;
+    left: 47%;
     bottom: 45%;
     transform: translate(-50%, 50%);
     height: 250px;
@@ -868,8 +870,10 @@ background-size:100%;
 
   .full-class {
     background-color: #FFC244;
+    min-height:50vh;
     margin-right: 20%;
     margin-top: 6em;
+    margin-bottom: 2em;
     display: flex;
     margin-left: 20%;
     flex-direction: column;

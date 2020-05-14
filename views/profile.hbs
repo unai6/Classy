@@ -12,10 +12,20 @@
 
       <label class="classDetailsLabel">Name</label>
       <input class="fields" type='text' name='name'placeholder='New Name' value='{{name}}'>
-       <label class="classDetailsLabel">New Password</label>
+      <label class="classDetailsLabel">New Password</label>
       <input class="fields" type='password' name='password' placeholder='Set a new password'>
+      <label class="classDetailsLabel">Phone Number</label>
+      <input class="signupFields" type='text' name='phoneNumber' value='{{phoneNumber}}' required='required'>
+
+       {{#if isTeacher}}
       <label class="classDetailsLabel">Set a new Price</label>
       <input class="fields" type='number' name='classPrice' placeholder='New Price €' min='0' value='{{classPrice}}'/>
+       <label class="classDetailsLabel" style='text-align:center' from='bio'>Write your Bio</label>
+      <textarea class="fields" type='text' name='bio' placeholder='Write about yourself and what you offer'>{{bio}}</textarea>
+   
+      <input class="fields"  type='text' name='subject' placeholder='What can you teach?' required='required' value='{{subject}}'>
+
+      {{/if}}
       <button class="btnCreate" type='submit'>Save</button>
     </form>
 </div>

@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 const User = require('../../models/user.js');
-
 const bcrypt = require('bcrypt');
 const bcryptSalt = 10;
 
@@ -11,45 +10,49 @@ const bcryptSalt = 10;
 
 router.get('/signup', (req, res, next) => {
   !req.session.currentUser ? res.render('signup.hbs') : res.redirect('/classy/classy')
-
+  
 });
 
 
 router.post('/signup', (req, res, next) => {
-  let { email, name, password, isTeacher, classPrice } = req.body;
-
+  let { email, name, password, isTeacher, classPrice, bio, phoneNumber, subject} = req.body;
+  
+  const emailRegexp =   /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+  emailRegexp.test(email) ? true : false, res.render('signup.hbs', {errorMessage: 'please provide a valid email'});
   //console.log(isTeacher)
-
-  if (name === '' || password === '') {
+  
+  if (name === '' || password === '' || email === '') {
     res.render('signup.hbs', {
       errorMessage: 'Please fill all the fields to sign up'
     });
     return;
-
+    
   } else if (isTeacher === 'on' && classPrice === null) {
     res.render('signup.hbs', {
       errorMessage: 'You have to set a Class price',
     });
     return;
-
+    
   } else if (isTeacher === 'on') {
     isTeacher = true
-  }
 
+  } 
+
+  
   User.findOne({ name })
-    .then(user => {
-      const salt = bcrypt.genSaltSync(bcryptSalt);
-      const hashPass = bcrypt.hashSync(password, salt);
-
-      if (user !== null) {
-        res.render('signup.hbs', {
-          errorMessage: 'The name already exists!'
-        });
-        return;
+  .then(user => {
+    const salt = bcrypt.genSaltSync(bcryptSalt);
+    const hashPass = bcrypt.hashSync(password, salt);
+    
+    if (user !== null) {
+      res.render('signup.hbs', {
+        errorMessage: 'The name already exists!'
+      });
+      return;
       }
 
 
-      User.create({ name, email, password: hashPass, isTeacher, classPrice })
+      User.create({ name, email, password: hashPass, isTeacher, classPrice, bio, phoneNumber, subject})
         .then(() => {
           res.redirect('/classy/classy');
         })

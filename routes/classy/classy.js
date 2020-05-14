@@ -63,7 +63,7 @@ router.get('/teachers', (req, res, next) => {
     {
       $and: [
         { isTeacher: true },
-        { _id: { $ne: req.session.currentUser._id } }
+        { _id: { $ne: req.session.currentUser._id } },
       ]
     },
 
@@ -79,13 +79,13 @@ router.get('/teachers', (req, res, next) => {
   );
 });
 
-router.post('/teachers', (req, res, next) => {
+/* router.post('/teachers', (req, res, next) => {
   const userId = req.session.currentUser._id;
   const teacherInfo = {
     classPrice: req.body.classPrice,
     isTeacher: true
   };
-
+ 
 
   User.findByIdAndUpdate(userId, teacherInfo, { new: true }, (err, oneUser) => {
     if (err) {
@@ -97,7 +97,7 @@ router.post('/teachers', (req, res, next) => {
 
     res.render('teachers');
   });
-});
+});*/
 
 
 router.get('/teachers/:id', (req, res, next) => {
@@ -256,8 +256,9 @@ router.post('/class/:classId/feedback/:feedbackId/delete', (req, res, next) => {
 
 ///////////////// profile-view
 router.get('/profile', (req, res, next) => {
+  const userId = req.session.currentUser._id;
 
-  User.findById(req.session.currentUser._id)
+  User.findById(userId)
     .then(userId => {
       //console.log(userId)
       res.render("profile.hbs", userId);
@@ -267,7 +268,8 @@ router.get('/profile', (req, res, next) => {
 
 
 router.post('/profile/edit-profile', uploadCloud.single('photo'), async (req, res, next) => {
-  const { name, password, classPrice } = req.body;
+  const userId =req.session.currentUser._id;
+  const { name, password, classPrice, bio, phoneNumber, subject} = req.body;
   const imgPath = req.file.url;
   const imgName = req.file.originalname;
   const salt = bcrypt.genSaltSync(bcryptSalt);
@@ -276,7 +278,7 @@ router.post('/profile/edit-profile', uploadCloud.single('photo'), async (req, re
   try {
 
 
-    await User.findOneAndUpdate({ _id: req.session.currentUser }, { name, password: hashPass, classPrice, imgName, imgPath })
+    await User.findByIdAndUpdate(userId, { name, password: hashPass, classPrice, imgName, imgPath, bio, phoneNumber, subject})
     res.redirect('/classy/classy')
 
 

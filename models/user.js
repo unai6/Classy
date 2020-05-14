@@ -9,6 +9,9 @@ const userSchema = new Schema({
   password: { type: String, require: true, unique: true },
   isTeacher: { type: Boolean, default: false },
   classPrice: { type: Number, default: null },
+  bio: String,
+  subject:String,
+  phoneNumber:String,
   imgName: String,
   imgPath: {type: String, default :'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1024px-User_icon_2.svg.png' }
 },
