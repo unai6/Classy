@@ -52,6 +52,8 @@ body {
   border-width: 1px;
   margin-top: 20px;
 }
+
+
 .btn_get_two:hover {
   background: transparent;
   color: #FFC244;
@@ -126,6 +128,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   background: #FFC244;
   border-color: #FFC244;
   color: #fff;
+  font-size:1.5em
 }
 
 .btn_get_two:hover {
@@ -485,13 +488,14 @@ background-size:100%;
   }
 
   .btn {
-    font-size: 2.5em;
+    font-size: 2em;
     border-radius: 10px;
     height: 2em;
     width: 6em;
     padding-bottom: 2em;
     font-weight: bold;
     margin-top: 1em;
+    margin-bottom:1em
   }
 
 }
