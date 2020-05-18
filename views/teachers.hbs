@@ -1,5 +1,6 @@
 <div>
-    <a href="/classy/classy"><i class="far fa-arrow-alt-circle-left" style='font-size:3em; margin:1em; color:#2ABB9B'></i></a>
+    <a href="/classy/classy"><i class="far fa-arrow-alt-circle-left"
+            style='font-size:3em; margin:1em; color:#2ABB9B'></i></a>
 
     <h2 class='signup-h2-lg ml-5 mt-5' style='color:black; text-align:center'> Find the best teacher for you </h2>
 
@@ -9,42 +10,25 @@
                 onkeyup="filteredTeachers()" id='searchbar' style='border:solid .1em #2ABB9B; width:88vw'>
         </div>
 
-        <script>
-            const filteredTeachers = () => {
-                let input = document.getElementById('searchbar').value
-                input = input.toLowerCase();
-                let teacherList = document.getElementsByClassName('teachers');
-
-
-                for (i = 0; i < teacherList.length; i++) {
-                    if (teacherList[i].innerHTML.toLowerCase().includes(input)) {
-                        teacherList[i].style.display = "list-item";
-                    }
-                    else {
-                        teacherList[i].style.display = "none";
-                    }
-                }
-            };
-
-        </script>
     </div>
 
     <div class="mx-auto col-lg-8 col-sm-12 mt-3">
         <ul style='list-style:none' class='card-deck ml-5' id='list'>
             {{#each teachers}}
             <li class='teachers'>
-                <div class="card" style="width: 25rem; height:35em ; padding:1em; margin-top:1em ;border: solid 1px #2ABB9B">
+                <div class="card"
+                    style="width: 25rem; height:30em ; padding:1em; margin-top:1em ;border: solid 1px #2ABB9B">
                     <img class='profile-pic-UI img-fluid d-block bd-placeholder-img card-img-top mx-auto'
                         src="{{imgPath}}" style='height:6em; width:5.5em' alt='photo'>
 
                     <div class="card-body " style="width: 25rem; height:30em">
                         <h3 style='margin-bottom: 1em; text-align: center; color:black'> {{ this.name }} </h3>
                         <h4 style='margin-bottom: 1em; color: #2ABB9B'>{{this.subject}}</h4>
-                        <p style='margin-bottom: 1em'>{{ this.bio}} </p>
-                        <p style='margin-bottom: 1em'>  <b>{{ this.classPrice }}€</b> </p>
-                        <p style='margin-bottom: 1em'> Phone Number - {{this.phoneNumber}}</p>
+                        <div class='bioText' style='margin-bottom: 1em'> {{ this.bio}}</div>
+                        <p style='margin-bottom: 1em'> <b>{{ this.classPrice }}€</b> </p>
+                        <p style='margin-bottom: 1em'> {{this.phoneNumber}}</p>
 
-                        <a style='color: rgb(212, 156, 42)'href="/classy/teachers/{{ this._id }}">
+                        <a style='color: rgb(212, 156, 42)' href="/classy/teachers/{{ this._id }}">
                             Schedule a Class <i class="far fa-calendar-alt"></i>
                         </a>
                     </div>
@@ -55,3 +39,35 @@
         </ul>
     </div>
 </div>
+<script>
+    const filteredTeachers = () => {
+        let input = document.getElementById('searchbar').value
+        input = input.toLowerCase();
+        let teacherList = document.getElementsByClassName('teachers');
+
+
+        for (i = 0; i < teacherList.length; i++) {
+            if (teacherList[i].innerHTML.toLowerCase().includes(input)) {
+                teacherList[i].style.display = "list-item";
+            }
+            else {
+                teacherList[i].style.display = "none";
+            }
+        }
+    };
+
+</script>
+
+<script>
+
+    $(function fn() {
+        let elem = $('.bioText').toArray()
+        .map(texts => {
+            let $texts = $(texts)
+            return (
+                texts.innerHTML.substr(0,50)+ '...'
+            )
+        });
+        return;
+    });
+</script>

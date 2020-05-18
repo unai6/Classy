@@ -35,7 +35,7 @@ router.post('/signup', (req, res, next) => {
     
   } else if (isTeacher === 'on') {
     isTeacher = true
-
+    
   } 
 
   
