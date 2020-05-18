@@ -18,7 +18,7 @@ router.post('/signup', (req, res, next) => {
   let { email, name, password, isTeacher, classPrice, bio, phoneNumber, subject} = req.body;
   
   const emailRegexp =   /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-  emailRegexp.test(email) ? true : false, res.render('signup.hbs', {errorMessage: 'please provide a valid email'});
+  emailRegexp.test(email) ? true :  res.render('signup.hbs', {errorMessage: 'please provide a valid email'});
   //console.log(isTeacher)
   
   if (name === '' || password === '' || email === '') {

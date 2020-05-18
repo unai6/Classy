@@ -1,11 +1,37 @@
 <h2> Find the best teacher for you </h2>
 
-<div class="mx-auto col-lg-8 col-sm-8">
-    <ul style='list-style:none' class='card-deck'>
+<div>
+    <div class="md-form active-cyan active-cyan-2 mb-3">
+        <input class="form-control" type="text" placeholder="Search your subject" aria-label="Search" onkeyup="filteredTeachers()" id='searchbar'>
+    </div>
+
+    <script>
+        const filteredTeachers = () => {
+            let input = document.getElementById('searchbar').value
+            input = input.toLowerCase();
+            let teacherList = document.getElementsByClassName('teachers');
+
+
+            for (i = 0; i < teacherList.length; i++) {
+                if (teacherList[i].innerHTML.toLowerCase().includes(input)) {
+                    teacherList[i].style.display = "list-item";
+                }
+                else {
+                    teacherList[i].style.display = "none";
+                }
+            }
+        };
+
+    </script>
+</div>
+
+<div class="mx-auto col-lg-8 col-sm-12">
+    <ul style='list-style:none' class='card-deck ml-5' id='list'>
         {{#each teachers}}
-        <li>
+        <li class='teachers'>
             <div class="card" style="width: 25rem;">
-                <img class='profile-pic-UI img-fluid d-block bd-placeholder-img card-img-top mx-auto' src="{{imgPath}}" style='height:6em; width:5.5em' alt='photo'>
+                <img class='profile-pic-UI img-fluid d-block bd-placeholder-img card-img-top mx-auto' src="{{imgPath}}"
+                    style='height:6em; width:5.5em' alt='photo'>
 
                 <div class="card-body">
                     <h3> {{ this.name }} </h3>
