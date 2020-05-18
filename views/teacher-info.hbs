@@ -1,34 +1,27 @@
+<div class="signup">
+    <h3 class='signup-h2-lg ml-5'>
+        Schedule a Class With
+        <i class='ml-2'> {{ teacher.name }} </i> </br>
+    </h3>
+        <span class='m-5' style='font-size:1em'>Teacher contact: <b>{{teacher.email}}</b></span>
 
-    <div>
-        <p>{{teacher.name}}</p>
-        <p>{{teacher.email}}</p>
-
-    </div>
+    <form action="/classy/class-book" method="post" class='form-lg'>
+            <label for="pickup-date-input" style='font-size:2em' >
+                When would you like to schedule a class?
+            </label>
         
-        
-<h3>
-    Schedule a Class With
-    <i> {{ teacher.name }} </i>
-</h3>
+            <input class="signupFields" type="date" name="classDate">
+            <input class="signupFields" type="time" name="time">
+            <input class="signupFields" type="text" name="description" placeholder=' class description'>
+            <input class="signupFields" type="text" name="name" placeholder=' class name'>
 
-<form action="/classy/class-book" method="post">
-    <div>
-        <label for="pickup-date-input">
-            When would you like to schedule a class?
-        </label>
-        <input type="date" name="classDate" >
-        <input type="time" name="time">
-        <input type="text" name="description" placeholder=' class description'>
-        <input type="text" name="name" placeholder =' class name'>
+        <input type="hidden" name="teacherId" value="{{ teacher._id }}">
 
-    </div>
-  
-    <input type="hidden" name="teacherId" value="{{ teacher._id }}">
-
-    <button> Schedule This Class </button>
-</form>
+        <button class="btn btn-warning" style='width:10em'> Schedule a Class </button>
+    <a class ='btn btn-danger' style='width:15em' href="/classy/teachers">
+        Find Another Teacher
+    </a>
+    </form>
 
 
-<a href="/classy/teachers">
-    Find Another Teacher
-</a>
+</div>
