@@ -649,6 +649,12 @@ background-size:100%;
     font-size: 2em;
     font-weight: bold;
   }
+
+
+
+  .card-body{
+    font-size: 1.5em
+  }
   
 }
 
